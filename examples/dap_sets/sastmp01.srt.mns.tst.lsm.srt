@@ -1,0 +1,22 @@
+_type_ 8 y -1 treat 6 block 6 _term_ 0 _block 6 _lsm_ -1 _LSMEAN_ -1 _y -1 _stat_ -1
+EFFN|Q"%T-T!T-T-U|treat2|block1|1#||Q$.Q!!!!!!!!|A!!!!!!!!!!!|Q"%T-T!T-T-U|Q"%T-T!T-T-U
+EFFN|Q"%T-T!T-T-U|treat2|block2|1#||Q$/!!!!!!!!!|A!!!!!!!!!!!|Q"%T-T!T-T-U|Q"%T-T!T-T-U
+EFFN|Q"'!!!!!!!!!|treat2|block3|1#||Q$0!!!!!!!!!|A!!!!!!!!!!!|Q"'!!!!!!!!!|Q"'!!!!!!!!!
+LSMDIFF|Q$/!!!!!!!!!|treat2|block2|1#|block1|Q$/!!!!!!!!!|Q$.Q!!!!!!!!|Q$.Q!!!!!!!!|P`]!!!!!!!!!
+LSMDIFF|Q$0!!!!!!!!!|treat2|block3|1#|block1|Q$0!!!!!!!!!|Q$.Q!!!!!!!!|Q$.Q!!!!!!!!|Q"&!!!!!!!!!
+LSMDIFF|Q$.Q!!!!!!!!|treat2|block1|1#|block2|Q$.Q!!!!!!!!|Q$/!!!!!!!!!|Q$/!!!!!!!!!|1"$```$`````
+LSMDIFF|Q$0!!!!!!!!!|treat2|block3|1#|block2|Q$0!!!!!!!!!|Q$/!!!!!!!!!|Q$/!!!!!!!!!|Q"%!!!!!!!!!
+LSMDIFF|Q$.Q!!!!!!!!|treat2|block1|1#|block3|Q$.Q!!!!!!!!|Q$0!!!!!!!!!|Q$0!!!!!!!!!|0`#```$`````
+LSMDIFF|Q$/!!!!!!!!!|treat2|block2|1#|block3|Q$/!!!!!!!!!|Q$0!!!!!!!!!|Q$0!!!!!!!!!|0`$```$`````
+MINDIFF|Q$/!!!!!!!!!|treat2|block2|1#|block1|Q$/!!!!!!!!!|Q$.Q!!!!!!!!|Q$.Q!!!!!!!!|Q!!%7G!H']\<
+MINDIFF|Q$0!!!!!!!!!|treat2|block3|1#|block1|Q$0!!!!!!!!!|Q$.Q!!!!!!!!|Q$.Q!!!!!!!!|P``N`$"JA?SH
+MINDIFF|Q$.Q!!!!!!!!|treat2|block1|1#|block2|Q$.Q!!!!!!!!|Q$/!!!!!!!!!|Q$/!!!!!!!!!|Q!!%7G!H']\<
+MINDIFF|Q$0!!!!!!!!!|treat2|block3|1#|block2|Q$0!!!!!!!!!|Q$/!!!!!!!!!|Q$/!!!!!!!!!|P``N`$"JA?SH
+MINDIFF|Q$.Q!!!!!!!!|treat2|block1|1#|block3|Q$.Q!!!!!!!!|Q$0!!!!!!!!!|Q$0!!!!!!!!!|P``N`$"JA?SH
+MINDIFF|Q$/!!!!!!!!!|treat2|block2|1#|block3|Q$/!!!!!!!!!|Q$0!!!!!!!!!|Q$0!!!!!!!!!|P``N`$"JA?SH
+PROB|Q$/!!!!!!!!!|treat2|block2|1#|block1|Q$/!!!!!!!!!|Q$.Q!!!!!!!!|Q$.Q!!!!!!!!|P^US,="*E5<'
+PROB|Q$0!!!!!!!!!|treat2|block3|1#|block1|Q$0!!!!!!!!!|Q$.Q!!!!!!!!|Q$.Q!!!!!!!!|PS*Y$B#E$S&"
+PROB|Q$.Q!!!!!!!!|treat2|block1|1#|block2|Q$.Q!!!!!!!!|Q$/!!!!!!!!!|Q$/!!!!!!!!!|P^US,="*E5<'
+PROB|Q$0!!!!!!!!!|treat2|block3|1#|block2|Q$0!!!!!!!!!|Q$/!!!!!!!!!|Q$/!!!!!!!!!|PU4T3V"K1A6'
+PROB|Q$.Q!!!!!!!!|treat2|block1|1#|block3|Q$.Q!!!!!!!!|Q$0!!!!!!!!!|Q$0!!!!!!!!!|PS*Y$B#E$S&"
+PROB|Q$/!!!!!!!!!|treat2|block2|1#|block3|Q$/!!!!!!!!!|Q$0!!!!!!!!!|Q$0!!!!!!!!!|PU4T3V"K1A6'

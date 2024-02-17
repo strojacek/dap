@@ -1,0 +1,15 @@
+
+=================================
+Dap   1. Tue Mar 18 15:09:55 2014
+
+
+Reduced | full model regressors: _intercept_ | labind
+Number of observations = 14
+Number of trials = 27
+Events / Trials: nremiss / ncases
+-2 (Lred - Lfull) = 8.2988 = ChiSq0[1]
+Prob[ChiSq > ChiSq0] = 0.00397
+
+  Parameter           Estimate    Std Error   Wald ChiSq  Prob[ChiSq>Wald ChiSq]
+  _intercept_         -3.77714      1.37863       7.5064         0.00615
+  labind              0.144863    0.0593411      5.95942         0.01464

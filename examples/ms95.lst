@@ -1,0 +1,15 @@
+
+=================================
+Dap   1. Mon Jan 12 03:20:40 2004
+
+
+Reduced | full model regressors: _intercept_ | soilphos
+Number of observations = 9
+
+Response: plantphos
+   F0(1, 7) = 12.8868, Prob[F > F0] = 0.00886
+   R-sq = 0.648008, Adj R-sq = 0.597723
+
+   Parameter           Estimate    Std Error   T0[     7]  Prob[|T|>|T0|]
+   _intercept_          61.5804      6.24765      9.85656         0.00003
+   soilphos             1.41689     0.394698      3.58982         0.00886

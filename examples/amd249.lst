@@ -1,0 +1,176 @@
+
+=================================
+Dap   1. Mon Jan 12 03:20:11 2004
+
+
+Response variable: y
+
+Treatment       Levels
+--------        ------
+a               1 2
+b               1 2
+c               1 2
+
+
+=================================
+Dap   2. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: a b a*b b*c a*b*c
+Number of observations = 16
+H0 SS = 845.438, df = 7, MS = 120.777
+Error SS = 6.5, df = 8, MS = 0.8125
+R-sq = 0.99237
+F0 = 148.648
+Prob[F > F0] = 0.00001
+
+=================================
+Dap   3. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: a
+Number of observations = 16
+H0 SS = 39.0625, df = 1, MS = 39.0625
+Error SS = 6.5, df = 8, MS = 0.8125
+F0 = 48.0769
+Prob[F > F0] = 0.00013
+
+=================================
+Dap   4. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: b
+Number of observations = 16
+H0 SS = 770.062, df = 1, MS = 770.062
+Error SS = 6.5, df = 8, MS = 0.8125
+F0 = 947.769
+Prob[F > F0] = 0.00001
+
+=================================
+Dap   5. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: a*b
+Number of observations = 16
+H0 SS = 10.5625, df = 1, MS = 10.5625
+Error SS = 6.5, df = 8, MS = 0.8125
+F0 = 13
+Prob[F > F0] = 0.00693
+
+=================================
+Dap   6. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: c*b
+Number of observations = 16
+H0 SS = 24.125, df = 2, MS = 12.0625
+Error SS = 6.5, df = 8, MS = 0.8125
+F0 = 14.8462
+Prob[F > F0] = 0.00203
+
+=================================
+Dap   7. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: a*c*b
+Number of observations = 16
+H0 SS = 1.625, df = 2, MS = 0.8125
+Error SS = 6.5, df = 8, MS = 0.8125
+F0 = 1
+Prob[F > F0] = 0.40960
+
+=================================
+Dap   8. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: a 
+Denominator: a * b  
+EMS(a*b) =
+    4 Var(a*b)
+    1 Var(Error)
+EMS(a) =
+    8 Var(a)
+    4 Var(a*b)
+    1 Var(Error)
+Error for a =
+    1 MS(a*b)
+Number of observations = 16
+H0 SS = 39.0625, df = 1, MS = 39.0625
+Residual df = 1, MS = 10.5625
+F0 = 3.69822
+Prob[F > F0] = 0.30528
+
+=================================
+Dap   9. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: b 
+Denominator: a * b b * c a * b * c  
+EMS(a*b) =
+    4 Var(a*b)
+    2 Var(a*b*c)
+    1 Var(Error)
+EMS(b*c) =
+    4 Var(b*c)
+    2 Var(a*b*c)
+    1 Var(Error)
+EMS(a*b*c) =
+    2 Var(a*b*c)
+    1 Var(Error)
+EMS(b) =
+    8 Var(b)
+    4 Var(a*b)
+    4 Var(b*c)
+    2 Var(a*b*c)
+    1 Var(Error)
+Error for b =
+    1 MS(a*b)
+    1 MS(b*c)
+    -1 MS(a*b*c)
+Number of observations = 16
+H0 SS = 770.062, df = 1, MS = 770.062
+Residual df = 2.57671, MS = 21.8125
+F0 = 35.3037
+Prob[F > F0] = 0.01701
+
+=================================
+Dap  10. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: a * b 
+Denominator: a * b * c  
+EMS(a*b*c) =
+    2 Var(a*b*c)
+    1 Var(Error)
+EMS(a*b) =
+    4 Var(a*b)
+    2 Var(a*b*c)
+    1 Var(Error)
+Error for a*b =
+    1 MS(a*b*c)
+Number of observations = 16
+H0 SS = 10.5625, df = 1, MS = 10.5625
+Residual df = 2, MS = 0.8125
+F0 = 13
+Prob[F > F0] = 0.06906
+
+=================================
+Dap  11. Mon Jan 12 03:20:11 2004
+
+
+Testing Ho: c * b 
+Denominator: a * c * b  
+EMS(a*b*c) =
+    2 Var(a*b*c)
+    1 Var(Error)
+EMS(b*c) =
+    4 Var(b*c)
+    2 Var(a*b*c)
+    1 Var(Error)
+Error for b*c =
+    1 MS(a*b*c)
+Number of observations = 16
+H0 SS = 24.125, df = 2, MS = 12.0625
+Residual df = 2, MS = 0.8125
+F0 = 14.8462
+Prob[F > F0] = 0.06311

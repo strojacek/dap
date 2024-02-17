@@ -1,0 +1,21 @@
+_type_ 8 y -1 treat 6 block 6 _term_ 0
+N|Q!#!!!!!!!!!|treat1|block1|00
+MEAN|Q$.!!!!!!!!!|treat1|block1|00
+VAR|P`]!!!!!!!!!|treat1|block1|00
+N|Q!!!!!!!!!!!|treat1|block2|00
+MEAN|Q$/1!!!!!!!!|treat1|block2|00
+VAR|Q!!!!!!!!!!!|treat1|block2|00
+N|Q!#!!!!!!!!!|treat1|block3|00
+MEAN|Q$/!!!!!!!!!|treat1|block3|00
+VAR|Q!#!!!!!!!!!|treat1|block3|00
+N|Q!!!!!!!!!!!|treat2|block1|00
+MEAN|Q$/A!!!!!!!!|treat2|block1|00
+VAR|Q!!!!!!!!!!!|treat2|block1|00
+N|Q!#!!!!!!!!!|treat2|block2|00
+MEAN|Q$.Q!!!!!!!!|treat2|block2|00
+VAR|Q!#!!!!!!!!!|treat2|block2|00
+N|Q!#!!!!!!!!!|treat2|block3|00
+MEAN|Q%1!!!!!!!!!|treat2|block3|00
+VAR|P`]!!!!!!!!!|treat2|block3|00
+MSERROR|Q!!!!!!!!!!!|treat2|block3|1#
+ERRORDF|Q#*!!!!!!!!!|treat2|block3|1#

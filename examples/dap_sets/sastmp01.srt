@@ -1,0 +1,17 @@
+_type_ 8 treat 6 block 6 y -1
+OBS|treat1|block1|Q$.!!!!!!!!!
+OBS|treat1|block1|Q$-Q!!!!!!!!
+OBS|treat1|block1|Q$.1!!!!!!!!
+OBS|treat1|block2|Q$/A!!!!!!!!
+OBS|treat1|block2|Q$/!!!!!!!!!
+OBS|treat1|block3|Q$.A!!!!!!!!
+OBS|treat1|block3|Q$/1!!!!!!!!
+OBS|treat1|block3|Q$/1!!!!!!!!
+OBS|treat2|block1|Q$/1!!!!!!!!
+OBS|treat2|block1|Q$/Q!!!!!!!!
+OBS|treat2|block2|Q$.1!!!!!!!!
+OBS|treat2|block2|Q$/!!!!!!!!!
+OBS|treat2|block2|Q$/!!!!!!!!!
+OBS|treat2|block3|Q$0Q!!!!!!!!
+OBS|treat2|block3|Q%1!!!!!!!!!
+OBS|treat2|block3|Q%1)!!!!!!!!

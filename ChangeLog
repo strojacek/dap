@@ -1,0 +1,503 @@
+2014/04/16 Add proc surveyselect implemented on sys and srs method
+2014/03/19 Add proc import on csv
+2013/04/26 Fixed conflicting type  of getline
+           Fixed missing things in configure.ac
+           Fixed several build errors.
+2008/02/18 Files updated to GPLv3.
+2005/11/18 In file dap1.c, fixed bug: allocation of variable
+           "headerfield".
+2005/10/30 In file ps.c, fixed minor bug: hanging comment
+2005/10/29 In file sbstrans.c: corrected initialization of
+           string variables by decreasing index of char set
+           to '\0'.
+2005/05/23 In file dap1.c: implemented a dataset sort without
+           calling the Unix sort.
+           In file dap6.c, in function "categ", separated class
+           and auxilliary variables. Modified function "loglin"
+           to match.
+2005/05/11 In file dap3.c: inserted "exact" values for the "a"
+           coefficients of the Shapiro-Wilk statistic for n < 7;
+           increased the accuracy of the integral used for
+           approximating the remaining "a" coefficients;
+           implemented Royston's approximations for the p-value
+           of the Shapiro-Wilk statistic; improved the axis
+           specifications for the q-q plot; noted in the manual
+           that the range of number of observations for which
+           normality can be tested is from 3 to 2000.
+           In file sbstrans1.c, set up call to function "normal"
+           with no plots if no plot requested in SBS call to
+           proc univariate.
+2004/12/06 In file dap0.c, fixed bug in testing endianness by
+           making variables static.
+2004/11/09 In file sbstrans.c, fixed bug in function "opfix".
+2004/05/10 In file dap0.c, error message from function "merge"
+           now prints out both dataset names.
+2004/04/14 In file dap1.c, in function "split", fixed bug in
+           allocation of integer array "var".
+2004/03/28 In files dap.c, dap.h, externs.h, allowed a settable
+           parameter to control how many "string too long"
+           messages can be printed on input.
+2004/03/27 In file dap1.c, revised function "print", as
+           documented in the manual, to accomodate separators
+           other than spaces.
+2004/03/22 In file sbstrans.c, while looking for names of
+           variables to declare double, allow '_'. Fixed bug
+           in function "merge" in file dap0.c that caused dap
+           to crash if merge used '!' to exclude variables from
+           the second dataset.
+2004/02/17 In file sbstrans.c, escaped newlines inside strings,
+           deleted redundant length tests for variable "token".
+2004/02/14 In file dappp.c, included test for carriage return
+           '\r' in function "white".
+2004/02/10 In file prob.c, made all "prob" functions return
+           NaN if argument is not finite.
+2004/02/09 In function "dataset" in file dap0.c, removed
+           minor typo from call to function "fprintf".
+2004/02/02 In function "pict_autoaxes" in file ps1.c, moved
+           vertical axis labels farther from the axis to
+           accomodate tick numbers better. In function "show1"
+           in file "ps.c" fixed parentheses bug for centered
+           text.
+2004/02/01 Fixed bug in function "estimate" in file dap6.c:
+           allocated more space to variable "parammem".
+2004/01/25 Fixed --version bug in file dap.c. Reversed ticks
+           in pictures in functions "pict_autoaxes" and "yaxis"
+           file ps1.c.
+2004/01/11 Modified function "sbstoken" in file sbstrans.c to
+           allow C operators (for proc dap) "==", "!=", "+=",
+           "-=", "*=", and "/=".
+2004/01/07 Fixed bug in dap.c: need to pass "-" arguments on to
+           dapruns. Implemented contrasts with 1 df and no
+           specified error terms. Fixed bug in function
+           "dap_parsey" in file dap5.c regarding trailing blanks.
+           Fixed bug in function "dap_varnum" in file dap0.c
+           regarding leading and trailing blanks.
+2004/01/05 Fixed bug in function "show1" in file ps.c: now
+           escapes parentheses in text. Allowed multiple "test"
+           statements in function "glmtrans" in file sbstrans3.c.
+           Removed diagonal terms in reporting by function "lsmeans"
+           in file dap4.c. Modified examples in the manual to use
+           SBS.
+2004/01/04 In function "datatrans" in file sbstrans.c, implemented
+           option "firstobs=". Documented SBS procs and data step
+           in the manual.
+2003/12/31 In function "ftest" in file dap4.c, each term that
+           appears in both numerator and denominator is set to
+           an error term in the denominator, and if all terms in
+           the denominator are error terms, then treat as if no
+           denominator.
+2003/12/29 Implemented more SBS procs: npar1way, glm.
+2003/12/26 Implemented more SBS procs: chart, corr, plot, rank,
+           univariate, logistic, reg, and dap, as documented in
+           the manual.
+2003/12/04 Function "freq" no longer exits if FISHER or ODDSRAT
+           are requested for other than 2x2 tables, it merely
+           prints a message on the .log file. For SBS, implemented
+           proc freq; "title" statements.
+2003/12/22 Implemented "keep" and "drop" options for data steps.
+           Implemented "first.variables". Allowed for "weight"
+           variable in "proc means". Allowed for variants
+           STD, STDERR, PRT for SD, SEM, TPROB, respectively,
+           for compatibility with SBS.
+2003/12/21 In function "histo1" in file dap3.c, passed axis
+           specification on to pict_autoaxes. In function "merge"
+           in file dap0.c, implemented one-to-one merge is there
+           are no part variables.
+           For SBS: In function "sbsgetc" in file sbstrans.c, used
+           function "dgetc" from file dappp.c to skip over comments.
+           Implemented operators and "if", "else", "do",
+           "do while", and "end" statements in data steps.
+2003/12/20 In function "datatrans" in file sbstrans.c, implemented
+           "merge" statement. Corrected the description in the
+           manual for the "merge" function.
+2003/12/15 In function "histo1" in file dap3.c, if ROUND specified,
+           then set NXDIGITS to 0. Also fixed bug by protecting
+           variable "b" from exceeding variable "nbars".
+2003/11/26 Implemented proc tabulate for SBS. Modified function
+           "table" in file dap1.c so that format specifiers without
+           a decimal point revert to C "g" format with field-width
+           specification only.
+2003/11/25 Implemented proc datasets for SBS.
+2003/11/12 Modified function "dap_numdate" to accept dates with
+           '/' separating the month, day, and year.
+2003/11/11 Implemented proc chart for SBS.
+2003/11/10 Cleaned up code for processing procs, adding functions
+           "isby", "getoption", "putsort", and "copylist" to file
+           sbstrans.c.
+2003/11/05 For SBS, finished implementing procs print, means,
+           and sort.
+2003/11/04 Fixed minor bug in FISHER option, in function "freq"
+           in file dap2.c, which reported p-values greater than
+           1 for tables that fit the independence model exactly.
+           Dap now recognizes ".sbs" files that conform to SAS
+           syntax and translates them into Dap ".c" files and
+           processes them. At this time, only simple SAS
+           constructions are recognized. This involves modifications
+           to files: dap.c, daprun.c, dapruns.c, dappp.c. In addition,
+           new files sbstrans.c, sbstrans1.c, and sbs.h were created.
+2003/05/29 In files dap*.c, revised messages for functions
+           dap_malloc and dap_free to improve debugging.
+           Fixed bug (incorrect string length) in functions
+           "categ" and "loglin" in file dap6.c
+2003/05/27 In dap6.c, fixed bug in call to function
+           "dataset" in functions "categ" and "loglin".
+2003/05/26 In dap.c, the name for the editor process is
+           now the name of the first file being processed
+           instead of simply the name of editor.
+           Function "logreg" in file dap5.c now outputs
+           the estimates and covariance matrix.
+           Implemented function "estimate", as documented in
+           the manual, in file dap6.c.
+2003/05/26 Function "linreg" in file dap5.c now outputs
+           the estimates and covariance matrix.
+2003/05/18 Added "unable to fit model" error message to
+           function "sumcheck" for ANOVA in file dap4.c.
+2003/05/05 Implemented action "FILL" for function "dataset"
+           in file dap0.c, as documented in the manual, and
+           made functions "categ" and "loglin" in file dap6.c
+           call function "dataset" to fill the table before
+           processing.
+2003/05/04 Function "categ" prints out the parameter estimates
+           even if the covariance matrix is singular. Removed
+           extraneous output from function "categ1".
+2003/05/03 Removed function "rnd", which was used for no
+           good reason by funcion "pict_autoaxes", in file
+           ps1.c.
+2003/05/02 Function "plotlinreg" in file dap3.c no longer
+           requires the observations in its input dataset
+           to have _type_ equal to "OBS". Function
+           "plotlogreg" never did, despite what the manual
+           said; the manual has been corrected.
+2003/05/01 Increased number of dap_in and dap_out files
+           to 3.
+2003/04/30 Function "categ" in file dap6.c now writes
+           a dataset with the estimates, ASEs, and
+           the entries in the covariance matrix.
+2003/04/26 Fixed bug in dap0.c in function "merge:"
+           tested vars[12]null before freeing vars[12].
+2003/01/23 Version 2.1: Overhauled function
+           "pict_autoaxes" in file ps1.c. In particular,
+           it now allows 0 or 1 tick to be specified.
+2003/01/20 Version 2.1: implemented function "loglin",
+           for loglinear models, as documented in the
+           manual, in file dap6.c.
+2003/01/19 Version 2.1: Function "sort" in file dap1.c
+           now checks the modifiers.
+2003/01/11 Version 2.0: fixed weird bug regarding
+           reading and writing of doubles: changes
+           to files dap0.c, dap_make.h, machdep.c.
+           In particular, worked around weird behavior
+           of "return" statement in machdep.c.
+           In dap.c, took out call to "fork" for editor.
+2003/01/10 Version 2.0: incorporated front end into
+           Emacs, by splitting file dap.c into two
+           files: dap.c and daprun.c.
+2002/12/31 Version 1.8: in function "irls" in file
+           dap5.c, limited iterations in "for" loop
+           that recomputes the log likelihood.
+2002/12/30 Version 1.8: Added multi-line string
+           capability in function "show1" in file
+           ps.c. Used field "pict_fs" to correct the
+           positioning of axis labels in functions
+           "xaxis" and "yaxis" in file ps1.c and
+           corrected for scaling in function
+           "pict_autoaxes". In file dap3.c, in
+           functions "normal1" and "histo1", used
+           multi-line text feature to break up captions.
+2002/12/29 Version 1.8: Completed changes in file
+           dap4.c to function "lsmeans1" to work for
+           DUNNETT method.
+2002/12/25 Version 1.8: Function "normal" in file
+           dap3.c now labels the vertical axis correctly.
+           Function "table" in file dap1.c, when converting
+           integer or double values to string, uses temp
+           variable "nstring" to avoid running off end of
+           row and column label strings.
+2002/12/24 Version 1.8: Function "normal" in file
+           dap3.c now reports results of Shapiro-Wilk
+           in the lst file and gives the option to
+           skip plotting.
+           Function "lsmeans" and "lsmeans1" in file
+           dap4.c now include variables with the values
+           of the LS means so that the tables come out
+           with the variables sorted by their LS means
+           values.
+2002/12/20 Version 1.8: fixed bug in function
+           "histo1" in dap3.c, in copying variable
+           "word" to variable "bordspec".
+2002/11/21 Version 1.7: added function "join" to
+           file dap1.c, documented in manual.
+           Ajusted spacing in function "show1" in
+           file ps.c.
+           In file dap.h, changed constants in
+           initialization of dap_listlen to
+           appropriate variables.
+           In file dap0.c, to allow variable
+           exclusion in function "merge" by using
+           initial '!', as is allowed in function
+           "outset": in function "expand", skip '!';
+           in function "merge", lots of changes...
+           Add axis labeling feature to functions
+           "plotlinreg" and "plotlogreg".
+2002/11/20 Version 1.7: added function "split" to
+           file dap1.c, documented in manual.
+2002/11/20 Version 1.7: In function "orderf" in file
+           dap3.c and in various functions in file
+           prob.c, tested result of log() before calling
+           exp().
+2002/11/19 Version 1.7: Fixed bug in function
+           "pict_autoaxes" in ps1.c, now allowing
+           leading spaces in variable "axspec".
+           Fixed bug in function "histo1" in checking
+           for allowable characters of axis
+           specification and allowing one-character
+           axis specification. Changed axis specification
+           characters, as indicated in the documentation,
+           to avoid conflicts with uppercase directives
+           for functions calling "pict_autoaxes" and
+           fixed labeling.
+2002/11/07 Version 1.7: Changed defined constant
+           MAXPCTPT to 9 in dap_make.h.
+2002/10/31 Version 1.7: in function "autoaxes" in
+           ps1.c, put in test of variables "xlen"
+           and "ylen" to take care of cases in which
+           there are no variation in x or y.
+           In function "yaxis", quadrupled initial
+           value of variable "lablen" to move y-axis
+           label further away from y-axis.
+2002/10/30 Version 1.7: in function "merge" in
+           dap0.c, put in test of variables "vars1"
+           and "vars2" before testing for brackets.
+           In function "plotmeans" in dap3.c, added
+           variable "style" to call and allowed
+           axis name specifications as in function
+           "plot".
+2002/10/28 Version 1.7: put in test of variable
+           "more" in function "pctiles".
+2002/03/04 Version 1.6: fixed bug in machdep.c
+           in function "putnd": changed int h to
+           unsigned int h.
+2002/02/19 Version 1.6: fixed bug in dap1.c in
+           function "labelprint" to allow percent
+           signs in string variable values.
+2002/02/17 Version 1.6: fixed bug in dap0.c in
+           function "dap_arrnum", which was
+           returning an incorrect dimension for
+           arrays. Fixed bug in ps1.c in function
+           "pict_autoaxes" for specifying number
+           of tick marks on graph.
+2002/02/07 Version 1.6: fixed bug in ps1.c in
+           function "pict_autoaxes": even if
+           max y-value is specified, still need
+           to adjust max y-value to match spacing
+           of ticks.
+2002/01/31 Version 1.6: in dap1.c, updated call
+           to Linux "sort" to POSIX standard.
+2002/01/17 Version 1.6: in misc.c in function
+           "dap_maximize", compute maximization
+           steps in each coordinate direction in
+           succession and then take a maximization
+           step in that direction. Performance is
+           greatly improved.
+2002/01/08 Version 1.6: in dap6.c in functions
+           "categ" and "categ1", implemented
+           the naming of parameters.
+2001/12/31 Version 1.6: in dap0.c, put check
+           for duplicate variables in function
+           "outset". Fixed bug in function
+           "merge" for action "COPY": reallocated
+           variable name if name changed. Also
+           changed to do nothing if no change of
+           variable name.
+2001/12/30 Version 1.6: in dap0.c in functions
+           "fixlist" and "outset": if variable
+           list begins with '!' then named
+           variables are excluded from the output
+           dataset and all others are retained.
+2001/12/30 Version 1.5: in ps1.c, implemented 
+           functions "pict_save" and "pict_rest".
+2001/12/28 Version 1.5: in prob.c, put in test
+           for non-positive df in function
+           "probchisq".
+2001/12/27 Version 1.5: in dap6.c, printout
+           for function "categ1" now indicates
+           which parameters are in the model.
+2001/12/25 Version 1.5: in misc.c, function
+           "dap_maximize", implemented tracing
+           at chosen interval and doubled or
+           halved stepsize depending on whether
+           the step produced or did not produce
+           a larger response.
+2001/12/18 Version 1.5: in dap3.c, added new
+           "style" parameters to functions
+           "plotlinreg" and "plotlogreg" and
+           passed these on in the call to
+           function "plot". Added "MAXY"
+           option to style specification for
+           function "histogram".
+2001/12/17 Version 1.5: in function "categ"
+           in dap6.c, added check of variables
+           to confirm that the classification
+           and auxiliary variables are all of
+           type double. Fixed bug in function
+           "histogram" in dap3.c: deleted
+           extra calls to function "dap_swap".
+2001/12/11 Version 1.5: in function
+           "pict_autoaxes" in ps1.c, added
+           MINX, MAXX, MINY, MAXY, NXTICKS,
+           and NYTICKS capability to the
+           "axspec" parameter. Made function
+           "plot1" in dap3.c pass such
+           capabilities on to "pict_autoaxes".
+2001/12/11 Version 1.5: fixed bug in dap3.c:
+           updated call to function "group" to
+           reflect new parameter specs.
+2001/11/19 Version 1.5: in dap2.c, in function
+           "groupparse", changed "WIDTH" and
+           "COUNT" to '^' and '#", respectively,
+           and made them attached to the number
+           of groups; in function "group", checked
+           for NaN values of grouping variables
+           and don't cound observation if there are
+           any.
+2001/11/19 Version 1.5: in dap3.c: in function
+           "plot1", changed title0 to non-static;
+           in function "normal1", included
+           dap_title in caption; in function
+           "histo1", changed second "if (dap_title)"
+           to "if (nmark)"; Included call to
+           "dap_swap" in functions "histo1" and
+           "normal1".
+2001/11/15 Version 1.5: in dap2.c, in functions
+           "groupparse" and "group", changed
+           "NUMBER", "FRACTION", "PERCENT" to
+           "#", "/", "%", respectively and
+           allow variables to follow, after
+           starting and direction specification,
+           if any, and don't count observation if
+           any of those variables has a nonfinite
+           value.
+2001/11/14 Version 1.4: in dap2.c: in function
+           "pctile1", added printing of RANGE.
+2001/11/14 Version 1.4: in dap1.c: in function
+           "dap_mnsparse", return negative of number
+           of variables if the only stat requested
+           is N and the variable is undefined; in
+           function "means", use return value of
+           "dap_mnsparse" to determine whether to
+           count missing values.
+2001/11/13 Version 1.4: in dap0.c, in function
+           "dap_vd": changed respecification
+           checking to clarify error message and
+           set double value to NaN, int value to 0,
+           and string value to "" and in functions
+           "dap_dl" and "dap_il", set the values of
+           the variables in the user's program to NaN,
+           0, and "", resp.
+2001/11/01 Version 1.4: in dap0.c in function
+           "step", return 0 if zero-length line
+           read.
+2001/10/31 Version 1.4: in dap1.c, in functions
+           "means" and "meansout", incorporated
+           testing for and only including in
+           computations NaN values in data.
+           This included making variables "nobs"
+           and "dn" into arrays, allocating them
+           and freeing them. Incorporated testing only
+           for NaNs in dap2.c in functions "pctiles",
+           "corr", "group", and "trim" and in dap3.c
+           in functions "plot" and "normal".
+           In dap2.c, made function "valcpy"
+           static, as it should have been.
+2001/10/18 Version 1.4: fixed bug in function
+           "plotmeans" in dap3.c: in checking for
+           partvars being non-null, also check
+           first character if non-NULL.
+2001/10/17 Version 1.4: in dap2.c, streamlined code
+           for functions "group" and "trim" and the
+           functions that they call.
+2001/10/15 Version 1.4: in dap3.c, in function
+           "histogram", if there are missing values
+           this is now reported to the .err file instead
+           of the .log file. Added "style" options "MIN"
+           and "MAX" to function "histogram". Deleted
+           "style" option ZERO (which was never
+           documented in the manual).
+2001/10/10 Version 1.3: in dap4.c, functions "effects"
+           and "ftest" now check types of variables
+2001/10/09 Version 1.3: fixed bug in dap3.c: in function
+           "plotlinreg", length of variable "srtarg" was
+           1 too short.
+2001/10/01 Version 1.3: Added statistics to function
+           "means": VARM (variance of the mean with
+           df = number of observations - 1)), VARMFREQ
+           (variance of the mean with df = sum of
+           weights - 1).  Updated dap_make.h
+           accordingly.
+2001/09/28 Version 1.3: Removed clumsy function
+           "dap_param"; now header file dap.h does
+           #ifdef to determine whether user defined
+           parameters ABOVE #include <dap.h>,
+           otherwise sets defaults.
+2001/09/27 Version 1.3: Write errors to .err file,
+           report lines read, written to .log file;
+           only display .err automatically.
+2001/09/26 Version 1.3: Fixed bug in function
+           "dap_rest": incorrect reference to do_in
+           list.
+2001/09/26 Version 1.3: Function "step" now reports the
+           file name in which an error was encountered.
+           On end of file, "step" also reports, in the
+           log file, the number of lines read.
+           Appropriate log lines are now labeled with
+           "ERROR" or "WARNING".
+2001/09/24 Version 1.3: Fixed bug in function "dataset":
+           clearing values of variables in oldname that
+           are not in newname.
+2001/09/24 Version 1.3: in dap2.c, incorporated weighted
+           percentiles into function "pctile" by (1) adding
+           a weight variable and values, (2) calling
+           "dap_mnsparse" (renamed from "meansparse" and
+           no longer static in dap1.c and entered into
+           dap_make.h), and (3) calling the new function
+           "pctile2" if weighting is present.
+2001/09/15 Version 1.3: Renamed "probn" and "npoint" to
+           "probz" and "zpoint", resp.
+2001/09/15 Version 1.2: In src/dap3.c, function "plot1",
+           changed title0 to static, allocated once, don't
+           free.
+2001/09/15 Version 1.2: Renamed functions "invprobchisq",
+           "invprobf", "invprobn", and "invprobt" to
+           "chisqpoint", "fpoint", "npoint", and "tpoint",
+           resp.: src/dap[345].c, src/prob.c, src/dap_make.h,
+           src/dap.h, doc/dap.texi
+2001/09/14 Corrected a bug: function "invprobn" was
+           returning the negative of what it was
+           supposed to: src/prob.c Fixed calls to
+           "invprobn" in src/dap3.c and src/dap5.c
+           accordingly.
+2001/09/14 Changed src/dap3.c: added parameters "marks"
+           and "nmarks" and added variables "plotmarks"
+           and "pn" to functions "plotlinreg" and
+           "plotlogreg" so that they could process files
+           that are partitioned. Updated doc/dap.texi and
+           examples "ms95.c" and "cda88.c", and their
+           output accordingly.
+2001/09/06 Changed unsigned's to unsigned int's in
+           src/machdep.c
+2001/09/06 Setting dblhigh, dbllow moved to main() from
+           inset(), outset() in src/dap0.c
+
+Dap is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
