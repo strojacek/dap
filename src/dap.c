@@ -33,9 +33,23 @@
 #define GCC "/usr/bin/gcc"
 #define PS "/usr/bin/X11/gv"
 
+#ifdef __APPLE__
 #define DAPPP "/usr/local/bin/dappp"
+#elif __linux__
+#define DAPPP "/usr/local/bin/dappp"
+#elif __termux__
+#define DAPPP "/usr/bin/dappp"
+#endif
+#ifdef __linux__
 #define INCDIR "/usr/local/include"
 #define LIBDIR "/usr/local/lib"
+#elif __termux__
+#define INCDIR "/usr/local/include"
+#define LIBDIR "/usr/local/lib"
+#elif __APPLE__
+#define INCDIR "/usr/local/include"
+#define LIBDIR "/usr/local/lib"
+#endif
 
 char *pager;
 char *pageopts;
