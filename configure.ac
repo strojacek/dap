@@ -54,6 +54,9 @@ AC_CHECK_FUNCS([pow])
 AC_FUNC_FORK
 AC_FUNC_MALLOC
 
+AC_CHECK_LIB([m],[cos])
+AC_CHECK_LIB([gslcblas],[cblas_dgemm])
+AC_CHECK_LIB([gsl],[gsl_blas_dgemm])
 
 AC_CONFIG_FILES([doc/Makefile src/Makefile examples/Makefile Makefile])
 AC_OUTPUT
