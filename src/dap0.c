@@ -2597,7 +2597,7 @@ void merge(char *fname1, char *vars1, char *fname2, char *vars2,
 	      vars1);
       exit(1);
     }
-  if (vars2 && strhcr(vars2, '['))
+  if (vars2 && strchr(vars2, '['))
     {
       fprintf(dap_err,
 	      "(merge) Variable lists may not contain individual array elements: %s\n",
