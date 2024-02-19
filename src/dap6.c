@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "dap_make.h"
 #include "externs.h"
 
@@ -493,7 +494,7 @@ void categ(char *dname, char *varlist, char *auxvarlist, double (*expect)(),
   nparam = selparse(select, selcodes);
   allparam = (double *) dap_malloc(sizeof(double) * nparam, "");
   sel = selcodes;
-  if (index(selcodes, '?'))
+  if (strchr(selcodes, '?'))
     {
       selred = dap_malloc(nparam + 1, "");
       for (s = 0; selcodes[s]; s++)
