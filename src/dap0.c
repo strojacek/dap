@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dap_make.h"
 #include "externs.h"
 
@@ -2589,14 +2590,14 @@ void merge(char *fname1, char *vars1, char *fname2, char *vars2,
       fputs("(merge) Missing dataset name.\n", dap_err);
       exit(1);
     }
-  if (vars1 && index(vars1, '['))
+  if (vars1 && strchr(vars1, '['))
     {
       fprintf(dap_err,
 	      "(merge) Variable lists may not contain individual array elements: %s\n",
 	      vars1);
       exit(1);
     }
-  if (vars2 && index(vars2, '['))
+  if (vars2 && strhcr(vars2, '['))
     {
       fprintf(dap_err,
 	      "(merge) Variable lists may not contain individual array elements: %s\n",
