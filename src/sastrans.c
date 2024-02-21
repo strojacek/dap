@@ -55,6 +55,10 @@ static char *keyword[] = /* SAS keywords inside data step */
   "cards",
   "datalines",
   "run",
+  // GSL library functions
+  "beta",
+  "gamma",
+  "airy",
   ""
 };
 
