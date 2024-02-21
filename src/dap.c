@@ -31,7 +31,11 @@
 
 #define PAGE "/usr/bin/more"
 #define GCC "/usr/bin/gcc"
-#define PS "/usr/bin/X11/gv"
+#ifdef __linux__
+#define PS "/usr/bin/evince"
+#elif __APPLE__
+#define PS "/usr/opt/homebrew/evince"
+#endif
 
 #ifdef __APPLE__
 #define DAPPP "/usr/local/bin/dappp"
