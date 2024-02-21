@@ -21,11 +21,27 @@
  */
 
 #include <stdio.h>
+#ifdef __linux__
 #include <unistd.h>
+#elif __APPLE__
+#include <unistd.h>
+#elif __termux__
+#include <unistd.h>
+#elif _WIN64
+#include "winfork.h"
+#endif
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#ifdef __linux__
 #include <sys/wait.h>
+#elif __APPLE__
+#include <sys/wait.h>
+#elif __termux__
+#include <sys/wait.h>
+#elif _WIN64
+#include "winwait.h"
+#endif
 #include <signal.h>
 #include <string.h>
 
