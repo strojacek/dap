@@ -629,6 +629,8 @@ void datatrans(char *step, FILE *dapfile)
   int nby; /* number of "by" variables */
   int b; /* index to "by" vars */
   int i; /* index to constant string for character variables */
+  int iscards; /* is there a card statement? */
+  int isdatalines; /* is there a datalines statement? */
   
   nvars = 0;
   dropping = 0;
