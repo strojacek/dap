@@ -38,6 +38,10 @@
  ** THAN TO CHANGE THESE DEFAULT VALUES AT YOUR OWN RISK!!   **
  **************************************************************/
 
+// Do Loop macro implementation, similar to Fortran's Do Loops, for usage as a SAS do to loop
+#define DO(i,n) for(i=1;i<=n;i++)
+
+
 /* Parameters for variables */
 #ifdef DAP_MAXVAR
 int dap_maxvar = DAP_MAXVAR;
