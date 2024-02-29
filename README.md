@@ -1,3 +1,24 @@
+# Dap
+Gnu Dap: An open source implementation of SAS (Statistical Analysis System).A
+
+
+This is an update to Gnu Dap, with the following items in the works:
+
+Data Step:
+
+- Cards
+- Datalines
+- do to loops
+
+Procs:
+
+- Proc KDE
+- Proc Import includes Excel files
+
+
+
+Original Dap README
+---
 
 			THE BASIC DAP README
 
