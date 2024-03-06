@@ -529,7 +529,18 @@ int statementtrans(char *step, FILE *dapfile, int *isoutput)
 	}
       else /* no, just a do */
 	{
-	  fputs("{\n", dapfile);
+	  fputs("DO(", dapfile);
+	  while (step[s] && linecmp(step + s, "to"))
+	    s += opfix(step + s, dapfile);
+	  fputs(", ", dapfile);
+	  s += 3; /* get past the to */
+	  while (step[s] && linecmp(step + s, ";"))
+	    s += opfix(step + s, dapfile);
+	  fputs(")\n{\n", dapfile);
+	  s += 2; /* get past the ; */
+      s += statementtrans(step + s, dapfile, isoutput) - 2;
+      /* need - 2 because recursive call picked up the ; */
+ 
 	  statementtype = "do";
 	}
     }
