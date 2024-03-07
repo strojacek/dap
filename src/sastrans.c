@@ -47,6 +47,7 @@ static char *keyword[] = /* SAS keywords inside data step */
   "keep",
   "output",
   "do",
+  "to",
   "end",
   "if",
   "then",
