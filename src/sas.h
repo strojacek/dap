@@ -19,8 +19,8 @@
  */
 
 #include <stdio.h>
-#define MATHLIB_STANDALONE
-#include <Rmath.h>
+//#define MATHLIB_STANDALONE
+//#include <Rmath.h>
 #define TOKENLEN 127 /* max length of token */
 #define STATELEN 4095 /* max length of statement */
 #define STEPLEN 65535 /* max length of step */
