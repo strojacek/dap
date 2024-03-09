@@ -48,9 +48,9 @@
 #define PAGE "/usr/bin/more"
 #define GCC "/usr/bin/gcc"
 #ifdef __linux__
-#define PS "/usr/bin/evince"
+#define GP "/usr/bin/gnuplot"
 #elif __APPLE__
-#define PS "/usr/opt/homebrew/evince"
+#define GP "/usr/opt/homebrew/gnuplot"
 #endif
 
 #ifdef __APPLE__
@@ -166,7 +166,7 @@ int main(int argc, char **argv)
   if (!(compopts = ecopy(getenv("DAPCOMPOPTS"))))
     compopts = NULL;
   if (!(viewer = ecopy(getenv("DAPVIEWER"))))
-    viewer = PS;
+    viewer = GP;
   if (!(viewopts = ecopy(getenv("DAPVIEWOPTS"))))
     viewopts = NULL;
   if (!(dappp = ecopy(getenv("DAPPP"))))
