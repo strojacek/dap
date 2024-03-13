@@ -1,0 +1,7 @@
+   McIntosh          100  2.00
+   Red Delicious      75  2.25
+   Granny Smith      125  2.05
+   Jonathon          120  1.95
+   Rome              130  2.00
+   Gala              150  1.95
+   Fuji              200  2.25

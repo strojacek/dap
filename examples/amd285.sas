@@ -12,9 +12,11 @@ data;
  output;
  productivity = prod3;
  output;
+run;
 
 proc glm;
  class machine person;
  model productivity = machine person machine*person;
  test h=person e=machine*person;
  lsmeans machine / e=machine*person lsd;
+run;

@@ -1,6 +1,6 @@
 
 =================================
-Dap   1. Sun Feb 11 14:12:21 2024
+Dap   1. Sat Oct  7 22:09:23 2023
 
 
 Response variable: y
@@ -12,7 +12,7 @@ block           block1 block2 block3
 
 
 =================================
-Dap   2. Sun Feb 11 14:12:21 2024
+Dap   2. Sat Oct  7 22:09:23 2023
 
 
 Testing Ho: treat block treat*block
@@ -24,7 +24,7 @@ F0 = 23.8938
 Prob[F > F0] = 0.00003
 
 =================================
-Dap   3. Sun Feb 11 14:12:21 2024
+Dap   3. Sat Oct  7 22:09:23 2023
 
 
 Testing Ho: treat
@@ -35,7 +35,7 @@ F0 = 30.8571
 Prob[F > F0] = 0.00025
 
 =================================
-Dap   4. Sun Feb 11 14:12:21 2024
+Dap   4. Sat Oct  7 22:09:23 2023
 
 
 Least-squares means for: treat
@@ -44,7 +44,7 @@ LSD  method
 Minimum significant differences are for level 0.05000
 
 =================================
-Dap   5. Sun Feb 11 14:12:21 2024
+Dap   5. Sat Oct  7 22:09:23 2023
 
 
                             _stat_ for _lsm_ / treat
@@ -69,7 +69,7 @@ Dap   5. Sun Feb 11 14:12:21 2024
 ------------------------------------------------------
 
 =================================
-Dap   6. Sun Feb 11 14:12:21 2024
+Dap   6. Sat Oct  7 22:09:23 2023
 
 
 Testing Ho: block
@@ -80,7 +80,7 @@ F0 = 19.2923
 Prob[F > F0] = 0.00037
 
 =================================
-Dap   7. Sun Feb 11 14:12:21 2024
+Dap   7. Sat Oct  7 22:09:23 2023
 
 
 Least-squares means for: block
@@ -89,7 +89,7 @@ LSD  method
 Minimum significant differences are for level 0.05000
 
 =================================
-Dap   8. Sun Feb 11 14:12:21 2024
+Dap   8. Sat Oct  7 22:09:23 2023
 
 
                             _stat_ for _lsm_ / block
@@ -120,7 +120,7 @@ Dap   8. Sun Feb 11 14:12:21 2024
 -------------------------------------------------------------------
 
 =================================
-Dap   9. Sun Feb 11 14:12:21 2024
+Dap   9. Sat Oct  7 22:09:23 2023
 
 
 Testing Ho: treat*block
