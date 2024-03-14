@@ -145,10 +145,16 @@ class sas_function
 class SASVisitor : public sasVisitor
 {
 
-	/*
-    virtual std::any visitParse(SASParser::ParseContext *context) = 0;
+	
+    virtual std::any visitParse(SASParser::ParseContext *context) {
 
-    virtual std::any visitSas_stmt_list(SASParser::Sas_stmt_listContext *context) = 0;
+        return visitChildren(context);    
+	}
+
+    virtual std::any visitSas_stmt_list(SASParser::Sas_stmt_listContext *context) {
+		
+		return visitChildren(context);	
+	}
 
     virtual std::any visitIf_stmt(SASParser::If_stmtContext *context) = 0;
 
