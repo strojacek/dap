@@ -38,12 +38,12 @@ typedef double sas_number;
 typedef char sas_type;
 typedef chText sas_string;
 class sas_variable;
-class sas_function;
+class sas_macro;
 
 
 // --- Global Variables ---
 vector<unordered_map<string, sas_variable>> variable_scope;
-vector<unordered_map<string, sas_function>> function_scope;
+vector<unordered_map<string, sas_macro>> macro_scope;
 
 // --- Function Declarations ---
 string expandPath(const string & input);
@@ -58,13 +58,13 @@ void declareVariable(const string & var_name, const antlrcpp::Any & value);
 void setVariable(const string & var_name, const antlrcpp::Any & value);
 void addVariableScope();
 void delVariableScope();
-void addFunctionScope();
-void delFunctionScope();
+void addMacroScope();
+void delMacroScope();
 bool variableExists(const string & var_name);
 sas_variable & getVariable(const string & var_name);
-void setFunction(const string & function_name, const vector<string> & parameters, tree::ParseTree * execution_tree);
-sas_function & getFunction(const string & function_name);
-void printFunctionScope();
+void setMacro(const string & macro_name, const vector<string> & parameters, tree::ParseTree * execution_tree);
+sas_macro & getMacro(const string & macro_name);
+void printMacroScope();
 void printVariableScope();
 sas_number getRandomNumber();
 bool stringIsNumber(const sas_string & text);
@@ -112,7 +112,7 @@ class sas_variable
     }
 };
 
-class sas_function
+class sas_macro
 {
     private:
     vector<string> parameters;
@@ -357,25 +357,25 @@ class SASVisitor : public sasVisitor
 
     virtual antlrcpp::Any visitBlock(SASParser::BlockContext *context)
     {
-        // while blocks, if blocks and functiond declarations are also blocks
+        // while blocks, if blocks and macrod declarations are also blocks
         // because they not require a ; at the end (the statement that follows
         // them does) and thus it was simpler to make them blocks from a syntactic
         // point of view.
         if(context->BLOCK_OPEN() and context->BLOCK_CLOSE())
         {
             addVariableScope();
-            addFunctionScope();
+            addMacroScope();
             try
             {
                 visitChildren(context);
             }
             catch(int e)
             {
-                delFunctionScope();
+                delMacroScope();
                 delVariableScope();
                 throw e;
             }
-            delFunctionScope();
+            delMacroScope();
             delVariableScope();
         }
         else
@@ -507,9 +507,9 @@ class SASVisitor : public sasVisitor
         {
             return visit(context->children[1]);
         }
-        else if (context->function_call())
+        else if (context->macro_call())
         {
-            antlrcpp::Any return_value = visit(context->function_call());
+            antlrcpp::Any return_value = visit(context->macro_call());
             if(getValueType(return_value) != TYPE_NUMBER)
             {
                 error("the returned value is not a number.");
@@ -526,9 +526,9 @@ class SASVisitor : public sasVisitor
             }
             return var.getValue();
         }
-        else if (context->builtin_number_function())
+        else if (context->builtin_number_macro())
         {
-            return visit(context->builtin_number_function());
+            return visit(context->builtin_number_macro());
         }
     }
 
@@ -583,9 +583,9 @@ class SASVisitor : public sasVisitor
             }
             return make_shared<sas_string>(string_value.substr(index_val, 1));
         }
-        else if (context->function_call())
+        else if (context->macro_call())
         {
-            antlrcpp::Any return_value = visit(context->function_call());
+            antlrcpp::Any return_value = visit(context->macro_call());
             if(getValueType(return_value) != TYPE_STRING) 
             {
                 error("the returned value is not a string.");
@@ -602,9 +602,9 @@ class SASVisitor : public sasVisitor
             }
             return var.getValue();
         }
-        else if (context->builtin_string_function())
+        else if (context->builtin_string_macro())
         {
-            return visit(context->builtin_string_function());
+            return visit(context->builtin_string_macro());
         }
     }
 
@@ -644,9 +644,9 @@ class SASVisitor : public sasVisitor
             sas_variable & variable = getVariable(var_name);
             return variable.getValue();      
         }
-        else if (context->function_call())
+        else if (context->macro_call())
         {
-            return visit(context->function_call());
+            return visit(context->macro_call());
         }
     }
 
@@ -679,21 +679,21 @@ class SASVisitor : public sasVisitor
         return nullptr;
     }
 
-    virtual antlrcpp::Any visitFunction_call(SASParser::Function_callContext *context)
+    virtual antlrcpp::Any visitMacro_call(SASParser::Macro_callContext *context)
     {
-        string function_name = context->IDENTIFIER()->toString();
-        string function_return_name = "$" + function_name;
+        string macro_name = context->IDENTIFIER()->toString();
+        string macro_return_name = "$" + macro_name;
         antlrcpp::Any return_value;
-        sas_function & function = getFunction(function_name);
+        sas_macro & macro = getMacro(macro_name);
         addVariableScope();
-        addFunctionScope();
-        declareVariable(function_return_name, make_shared<bool>(false));
+        addMacroScope();
+        declareVariable(macro_return_name, make_shared<bool>(false));
         size_t parameter_number = 0;
-        if(context->argument().size() != function.parameterCount())
+        if(context->argument().size() != macro.parameterCount())
         {
-            error("argument count mismatch for function '" + function_name + "'.");
+            error("argument count mismatch for macro '" + macro_name + "'.");
         }
-        vector<string> & parameters = function.getParameters();
+        vector<string> & parameters = macro.getParameters();
         for(const auto & argument : context->argument())
         {
             declareVariable(parameters[parameter_number], visit(argument));
@@ -701,7 +701,7 @@ class SASVisitor : public sasVisitor
         }
         try
         {
-            visit(function.getTree());
+            visit(macro.getTree());
         }
         catch(int e)
         {
@@ -715,17 +715,17 @@ class SASVisitor : public sasVisitor
             }
             else if(e == EXCEPTION_RETURN)
             {
-                // Exit the function
+                // Exit the macro
             }
             else {
-                return_value = getVariable(function_return_name).getValue();
-                delFunctionScope();
+                return_value = getVariable(macro_return_name).getValue();
+                delMacroScope();
                 delVariableScope();
                 throw e;
             }
         }
-        return_value = getVariable(function_return_name).getValue();
-        delFunctionScope();
+        return_value = getVariable(macro_return_name).getValue();
+        delMacroScope();
         delVariableScope();
         return return_value;
     }
@@ -879,9 +879,9 @@ class SASVisitor : public sasVisitor
         {
             return visit(context->children[1]);
         }
-        else if (context->function_call())
+        else if (context->macro_call())
         {
-            antlrcpp::Any return_value = visit(context->function_call());
+            antlrcpp::Any return_value = visit(context->macro_call());
             if(getValueType(return_value) != TYPE_BOOLEAN)
             {
                 error("the returned value is not a boolean.");
@@ -898,9 +898,9 @@ class SASVisitor : public sasVisitor
             }
             return var.getValue();
         }
-        else if (context->builtin_boolean_function())
+        else if (context->builtin_boolean_macro())
         {
-            return visit(context->builtin_boolean_function());
+            return visit(context->builtin_boolean_macro());
         }
     }
 
@@ -949,15 +949,15 @@ class SASVisitor : public sasVisitor
         else exit(0);
     }
 
-    virtual antlrcpp::Any visitFunction_declaration(SASParser::Function_declarationContext *context)
+    virtual antlrcpp::Any visitMacro_declaration(SASParser::Macro_declarationContext *context)
     {
-        string function_name = context->IDENTIFIER()->toString();
+        string macro_name = context->IDENTIFIER()->toString();
         vector<string> parameters;
         for(const auto & parameter : context->VARIABLE())
         {
             parameters.push_back(parameter->toString());
         }
-        setFunction(function_name, parameters, context->statement());
+        setMacro(macro_name, parameters, context->statement());
         return nullptr;
     }
 
@@ -990,7 +990,7 @@ class SASVisitor : public sasVisitor
         return nullptr;
     }
 
-    virtual antlrcpp::Any visitBuiltin_number_function(SASParser::Builtin_number_functionContext *context)
+    virtual antlrcpp::Any visitBuiltin_number_macro(SASParser::Builtin_number_macroContext *context)
     {
         // len(string)
         if(context->BIF_LEN())
@@ -1005,7 +1005,7 @@ class SASVisitor : public sasVisitor
         }
     }
 
-    virtual antlrcpp::Any visitBuiltin_string_function(SASParser::Builtin_string_functionContext *context)
+    virtual antlrcpp::Any visitBuiltin_string_macro(SASParser::Builtin_string_macroContext *context)
     {
         // accept()
         if(context->ACCEPT())
@@ -1028,7 +1028,7 @@ class SASVisitor : public sasVisitor
         }
     }
 
-    virtual antlrcpp::Any visitBuiltin_boolean_function(SASParser::Builtin_boolean_functionContext *context)
+    virtual antlrcpp::Any visitBuiltin_boolean_macro(SASParser::Builtin_boolean_macroContext *context)
     {
         // isNumeric(string)
         if(context->BIF_ISNUM())
@@ -1055,7 +1055,7 @@ int main(int argc, const char * argv[])
     SASVisitor visitor;
 
     addVariableScope();
-    addFunctionScope();
+    addMacroScope();
     try
     {
         visitor.visit(tree);
@@ -1078,7 +1078,7 @@ int main(int argc, const char * argv[])
     return 0;
 }
 
-// --- Functions ---
+// --- Macros ---
 string expandPath(const string & input)
 {
     string text = input;
@@ -1215,14 +1215,14 @@ void delVariableScope()
     variable_scope.pop_back();
 }
 
-void addFunctionScope()
+void addMacroScope()
 {
-    function_scope.push_back(unordered_map<string, sas_function>());
+    macro_scope.push_back(unordered_map<string, sas_macro>());
 }
 
-void delFunctionScope()
+void delMacroScope()
 {
-    function_scope.pop_back();
+    macro_scope.pop_back();
 }
 
 void declareVariable(const string & var_name, const antlrcpp::Any & value)
@@ -1271,42 +1271,42 @@ sas_variable & getVariable(const string & var_name)
     error("the variable '" + var_name + "' hasn't been declared in this scope.");
 }
 
-void setFunction(const string & function_name, const vector<string> & parameters, tree::ParseTree * execution_tree)
+void setMacro(const string & macro_name, const vector<string> & parameters, tree::ParseTree * execution_tree)
 {
-    /*for(int scope_depth = 0; scope_depth < function_scope.size(); ++scope_depth)
+    /*for(int scope_depth = 0; scope_depth < macro_scope.size(); ++scope_depth)
     {
-        auto & scope = function_scope[scope_depth];
-        if(scope.find(function_name) != scope.end())
+        auto & scope = macro_scope[scope_depth];
+        if(scope.find(macro_name) != scope.end())
         {
-            sas_function & fun = function_scope[scope_depth][function_name];
+            sas_macro & fun = macro_scope[scope_depth][macro_name];
             fun.define(parameters, execution_tree);
             return;
         }
     }*/
-    int last_scope = function_scope.size() - 1;
-    sas_function & fun = function_scope[last_scope][function_name];
-    fun = sas_function();
+    int last_scope = macro_scope.size() - 1;
+    sas_macro & fun = macro_scope[last_scope][macro_name];
+    fun = sas_macro();
     fun.define(parameters, execution_tree);
 }
 
-sas_function & getFunction(const string & function_name)
+sas_macro & getMacro(const string & macro_name)
 {
-    for(int scope_depth = function_scope.size() - 1; scope_depth >= 0; --scope_depth)
+    for(int scope_depth = macro_scope.size() - 1; scope_depth >= 0; --scope_depth)
     {
-        auto & scope = function_scope[scope_depth];
-        if(scope.find(function_name) != scope.end())
+        auto & scope = macro_scope[scope_depth];
+        if(scope.find(macro_name) != scope.end())
         {
-            return scope[function_name];
+            return scope[macro_name];
         }
     }
-    error("the function '" + function_name + "' hasn't been declared in this scope.");
+    error("the macro '" + macro_name + "' hasn't been declared in this scope.");
 }
 
-void printFunctionScope()
+void printMacroScope()
 {
-    cout << "--- Function Scope ---" << endl;
+    cout << "--- Macro Scope ---" << endl;
     size_t depth = 0;
-    for(const auto & scope : function_scope)
+    for(const auto & scope : macro_scope)
     {
         for(const auto & tuple : scope)
         {
