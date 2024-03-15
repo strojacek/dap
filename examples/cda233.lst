@@ -1,13 +1,13 @@
 
 =================================
-Dap   1. Mon Jan 12 03:20:24 2004
+Dap   1. Sat Oct  7 23:59:02 2023
 
 
 Cochran-Mantel-Haenszel test for delay x response, stratified by penicillin
 M0-squared = 3.92857, Prob[M-squared > M0-squared] = 0.0475
 
 =================================
-Dap   2. Mon Jan 12 03:20:24 2004
+Dap   2. Sat Oct  7 23:59:02 2023
 
 
 For: penicillin = 0.125
@@ -22,7 +22,7 @@ For: penicillin = 0.125
 ------------------------------------
 
 =================================
-Dap   3. Mon Jan 12 03:20:24 2004
+Dap   3. Sat Oct  7 23:59:02 2023
 
 
 For: penicillin = 0.250
@@ -37,7 +37,7 @@ For: penicillin = 0.250
 ------------------------------------
 
 =================================
-Dap   4. Mon Jan 12 03:20:24 2004
+Dap   4. Sat Oct  7 23:59:02 2023
 
 
 For: penicillin = 0.500
@@ -52,7 +52,7 @@ For: penicillin = 0.500
 ------------------------------------
 
 =================================
-Dap   5. Mon Jan 12 03:20:24 2004
+Dap   5. Sat Oct  7 23:59:02 2023
 
 
 For: penicillin = 1.000
@@ -67,7 +67,7 @@ For: penicillin = 1.000
 ------------------------------------
 
 =================================
-Dap   6. Mon Jan 12 03:20:24 2004
+Dap   6. Sat Oct  7 23:59:02 2023
 
 
 For: penicillin = 4.000

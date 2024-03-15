@@ -11,6 +11,7 @@ data;
  output;
  y = y2;
  output;
+ run;
 
 proc glm;
  class a b c;
@@ -19,3 +20,4 @@ proc glm;
  test h=b e=a*b b*c a*b*c;
  test h=a*b e=a*b*c;
  test h=c*b e=a*c*b;
+run;
