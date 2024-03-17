@@ -1,14 +1,22 @@
 # Dap
-Gnu Dap: An open source implementation of SAS (Statistical Analysis System).A
+Gnu Dap: An open source implementation of SAS (Statistical Analysis System).
 
 
 This is an update to Gnu Dap, with the following items in the works:
 
-Data Step:
+- Implementation of the SAS Macro language.
 
+
+Data Step:
 - Cards
 - Datalines
 - do to loops
+- A Proper Lexer/Parser (using Antlr4)
+- Addition of the routines of the following libraries:
+		- MLPACK
+		- NMATH
+		- GSL
+		- Readstat
 
 Procs:
 
@@ -16,6 +24,35 @@ Procs:
 - Proc Arima
 - Proc Clust
 - Proc Import includes Excel files
+- Proc SQL
+
+
+Currently, Gnu Dap operates as a transpiler, originally converting from SAS to C code, now in the process of converting from SAS to C++.  It currently has the following functionality
+
+Data Step:
+- infile
+- input
+
+
+Procedures:
+
+- Proc Import (csv, and tab delimited files)
+- Proc SurveySelect
+- Proc Plot
+- Proc Means
+- Proc Univariate
+- Proc Corr
+- Proc Freq
+- Proc NPar1way
+- Proc Linreg
+- Proc Logreg
+- Proc GLM
+
+
+
+
+
+
 
 
 
