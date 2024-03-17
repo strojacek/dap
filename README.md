@@ -48,7 +48,7 @@ Procedures:
 - Proc Logreg
 - Proc GLM
 
-
+Note: There is work in the dev branch to migrate from a transpiler, to an actual tree walking interpreter, using Antlr4, to take advantage of the routines provided by other statistics/mathematics libraries. Currently the system uses a lot of it's own homegrown routines, to directly translate SAS input to C/C++. 
 
 
 
