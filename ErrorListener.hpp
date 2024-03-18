@@ -2,7 +2,7 @@
 #include "antlr4-runtime.h"
 
 using namespace antlr4;
-using namespace antlr;
+using namespace antlrcpp;
 using namespace std;
 
 
