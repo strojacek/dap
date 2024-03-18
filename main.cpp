@@ -17,6 +17,10 @@
 #include <unordered_map>
 #include <random>
 #include "libs/chtext.h"
+#include "interpreter/DapInterpreter.hpp"
+#include "interpreter/DapInterpreterState.hpp"
+#include "IOFormatter.hpp"
+#include "ErrorListener.hpp"
 
 // --- Namespaces ---
 using namespace std;
