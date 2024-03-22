@@ -120,4 +120,102 @@ bool DapValue::equals(const DapValue& other) const {
     return value == other.value;
 }
 
+int DapValue::hashCode() const {
+    // TODO: Implement hash code generation for different value types
+    return 0;
+}
+
+DapValue DapValue::lessThen(const DapValue& right) {
+    return compare(right, [](double l, double r) { return l < r; });
+}
+
+DapValue DapValue::lessThenEqual(const DapValue& right) {
+    return compare(right, [](double l, double r) { return l <= r; });
+}
+
+DapValue DapValue::modulo(const DapValue& right) {
+    return arithmeticEvaluation(right, [](double l, double r) { return std::fmod(l, r); });
+}
+
+DapValue DapValue::multiply(const DapValue& right) {
+    return arithmeticEvaluation(right, [](double l, double r) { return l * r; });
+}
+
+DapValue DapValue::notEqual(const DapValue& right) {
+    DapValue eq = equal(right);
+    return eq.equal(TrueValue) == TrueValue ? FalseValue : TrueValue;
+}
+
+DapValue DapValue::negate() {
+    return isANumericalValue() ? DapValue(-underlyingNumber()) : NullValue;
+}
+
+DapValue DapValue::notOp() {
+    return isANumericalValue() ? DapValue(underlyingNumber() == 0 ? 1 : 0) : NullValue;
+}
+
+DapValue DapValue::orOp(const DapValue& right) {
+    return isTruthy() || right.isTruthy() ? TrueValue : FalseValue;
+}
+
+void DapValue::printValue(std::ostream& outputStream, bool aligned) const {
+    if (isANumericalValue()) {
+        outputStream << std::fixed << std::setprecision(6) << underlyingNumber();
+    } else if (isAStringValue()) {
+        outputStream << underlyingString();
+    } else if (isAnOneDimensionalArrayValue()) {
+        outputStream << "{ ";
+        for (const auto& val : underlyingOneDimensionalArray()) {
+            val.printValue(outputStream, false);
+            outputStream << ", ";
+        }
+        outputStream << "}";
+    } else if (isATwoDimensionalArrayValue()) {
+        outputStream << "{ ";
+        for (const auto& innerArr : underlyingTwoDimensionalArray()) {
+            outputStream << "{ ";
+            for (const auto& val : innerArr) {
+                val.printValue(outputStream, false);
+                outputStream << ", ";
+            }
+            outputStream << "}, ";
+        }
+        outputStream << "}";
+    } else if (isAThreeDimensionalArrayValue()) {
+        outputStream << "{ ";
+        for (const auto& innerArr2D : underlyingThreeDimensionalArray()) {
+            outputStream << "{ ";
+            for (const auto& innerArr : innerArr2D) {
+                outputStream << "{ ";
+                for (const auto& val : innerArr) {
+                    val.printValue(outputStream, false);
+                    outputStream << ", ";
+                }
+                outputStream << "}, ";
+            }
+            outputStream << "}, ";
+        }
+        outputStream << "}";
+    }
+}
+
+DapValue DapValue::subtract(const DapValue& right) {
+    return arithmeticEvaluation(right, [](double l, double r) { return l - r; });
+}
+
+template<typename T>
+DapValue DapValue::arithmeticEvaluation(const DapValue& right, BiFunction op) const {
+    if (isANumericalValue() && right.isANumericalValue()) {
+        return DapValue(op(underlyingNumber(), right.underlyingNumber()));
+    }
+    return NullValue; // Invalid operation
+}
+
+template<typename Comparator>
+DapValue DapValue::compare(const DapValue& right, Comparator comparison) const {
+    if (isANumericalValue() && right.isANumericalValue()) {
+        return comparison(underlyingNumber(), right.underlyingNumber()) ? TrueValue : FalseValue;
+    }
+    return NullValue; // Invalid comparison
+}
 
