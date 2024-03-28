@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <gsl/gsl_math.h>
+
 /*  Copyright (C) 2001, 2002 Free Software Foundation, Inc.
  *
  *  This file is part of Dap.
