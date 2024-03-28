@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+#include <gsl/gsl_math.h>
 /*  Copyright (C) 2001, 2002 Free Software Foundation, Inc.
  *
  *  This file is part of Dap.
@@ -312,4 +312,4 @@ int dap_fabort = DAP_FABORT;
 int dap_fabort = 0;          /* abort on free */
 #endif
 
-#include <dap1.h>
+#include "dap1.h"
