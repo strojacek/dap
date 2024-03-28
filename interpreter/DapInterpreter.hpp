@@ -6,18 +6,18 @@
 #include "SASParser.h"
 #include "SASVisitor.h"
 #include "IOFormatter.h"
-#include "JazzInterpreterState.h"
+#include "DapInterpreterState.h"
 #include "ErrorListener.h"
 
-class JazzInterpreter {
+class DapInterpreter {
 private:
     std::istream& stdin;
     std::ostream& stdout;
     std::ostream& stderr;
-    std::unique_ptr<JazzInterpreterState> state;
+    std::unique_ptr<DapInterpreterState> state;
 
 public:
-    JazzInterpreter(std::istream& stdin, std::ostream& stdout, std::ostream& stderr)
+    DapInterpreter(std::istream& stdin, std::ostream& stdout, std::ostream& stderr)
         : stdin(stdin), stdout(stdout), stderr(stderr) {}
 
     void run(std::istream& inputStream) {
@@ -33,10 +33,10 @@ public:
 
         try {
             antlr4::tree::ParseTree* tree = parser.program();
-            state = std::make_unique<JazzInterpreterState>();
+            state = std::make_unique<DapInterpreterState>();
             state->setCurrentScript(input.toString());
 
-            JazzVisitor visitor(state, stdin, stdout);
+            DapVisitor visitor(state, stdin, stdout);
             visitor.visit(tree);
         } catch (InterpreterBaseException& exception) {
             stderr << exception.what() << std::endl;
@@ -53,7 +53,7 @@ public:
         }
     }
 
-    JazzInterpreterState* getState() {
+    DapInterpreterState* getState() {
         return state.get();
     }
 

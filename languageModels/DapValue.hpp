@@ -9,89 +9,89 @@
 
 class ParserRuleContext {};
 
-class JazzValue {
+class DapValue {
 public:
-    static const JazzValue FalseValue;
-    static const JazzValue TrueValue;
-    static const JazzValue NullValue;
+    static const DapValue FalseValue;
+    static const DapValue TrueValue;
+    static const DapValue NullValue;
 
 private:
     using BiFunction = std::function<double(double, double)>;
 
     // Underlying value
-    using Value = std::variant<double, std::string, std::vector<JazzValue>>;
+    using Value = std::variant<double, std::string, std::vector<DapValue>>;
     Value value;
 
 public:
-    JazzValue(const std::string& value) : value(value) {}
-    JazzValue(double value) : value(value) {}
-    JazzValue(const std::vector<JazzValue>& values) : value(values) {}
+    DapValue(const std::string& value) : value(value) {}
+    DapValue(double value) : value(value) {}
+    DapValue(const std::vector<DapValue>& values) : value(values) {}
 
-    JazzValue add(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue add(const DapValue& right, const ParserRuleContext& context) {
         if (std::holds_alternative<std::string>(value) && std::holds_alternative<std::string>(right.value)) {
-            return JazzValue(std::get<std::string>(value) + std::get<std::string>(right.value));
+            return DapValue(std::get<std::string>(value) + std::get<std::string>(right.value));
         } else if (std::holds_alternative<std::string>(value) && std::holds_alternative<double>(right.value)) {
-            return JazzValue(std::get<std::string>(value) + std::to_string(std::get<double>(right.value)));
+            return DapValue(std::get<std::string>(value) + std::to_string(std::get<double>(right.value)));
         } else if (std::holds_alternative<double>(value) && std::holds_alternative<std::string>(right.value)) {
-            return JazzValue(std::to_string(std::get<double>(value)) + std::get<std::string>(right.value));
+            return DapValue(std::to_string(std::get<double>(value)) + std::get<std::string>(right.value));
         } else {
             return arithmeticEvaluation(right, [](double a, double b) { return a + b; }, context);
         }
     }
 
-    JazzValue and(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue and(const DapValue& right, const ParserRuleContext& context) {
         return isTruthy(context) && right.isTruthy(context) ? TrueValue : FalseValue;
     }
 
-    JazzValue divide(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue divide(const DapValue& right, const ParserRuleContext& context) {
         return arithmeticEvaluation(right, [](double a, double b) { return a / b; }, context);
     }
 
-    JazzValue equal(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue equal(const DapValue& right, const ParserRuleContext& context) {
         if (std::holds_alternative<double>(value) && std::holds_alternative<double>(right.value)) {
             return compare(right, [](double a, double b) { return a == b; }, context);
         } else if (std::holds_alternative<std::string>(value) && std::holds_alternative<std::string>(right.value)) {
             return std::get<std::string>(value) == std::get<std::string>(right.value) ? TrueValue : FalseValue;
-        } else if (std::holds_alternative<std::vector<JazzValue>>(value) && std::holds_alternative<std::vector<JazzValue>>(right.value)) {
-            return std::get<std::vector<JazzValue>>(value) == std::get<std::vector<JazzValue>>(right.value) ? TrueValue : FalseValue;
+        } else if (std::holds_alternative<std::vector<DapValue>>(value) && std::holds_alternative<std::vector<DapValue>>(right.value)) {
+            return std::get<std::vector<DapValue>>(value) == std::get<std::vector<DapValue>>(right.value) ? TrueValue : FalseValue;
         } else {
             return FalseValue;
         }
     }
 
-    JazzValue greaterThen(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue greaterThen(const DapValue& right, const ParserRuleContext& context) {
         return compare(right, [](double a, double b) { return a > b; }, context);
     }
 
-    JazzValue greaterThenEqual(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue greaterThenEqual(const DapValue& right, const ParserRuleContext& context) {
         return compare(right, [](double a, double b) { return a >= b; }, context);
     }
 
-    JazzValue lessThen(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue lessThen(const DapValue& right, const ParserRuleContext& context) {
         return compare(right, [](double a, double b) { return a < b; }, context);
     }
 
-    JazzValue lessThenEqual(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue lessThenEqual(const DapValue& right, const ParserRuleContext& context) {
         return compare(right, [](double a, double b) { return a <= b; }, context);
     }
 
-    JazzValue modulo(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue modulo(const DapValue& right, const ParserRuleContext& context) {
         return arithmeticEvaluation(right, [](double a, double b) { return std::fmod(a, b); }, context);
     }
 
-    JazzValue multiply(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue multiply(const DapValue& right, const ParserRuleContext& context) {
         return arithmeticEvaluation(right, [](double a, double b) { return a * b; }, context);
     }
 
-    JazzValue negate(const ParserRuleContext& context) {
+    DapValue negate(const ParserRuleContext& context) {
         return arithmeticEvaluation(TrueValue, [](double a, double) { return -a; }, context);
     }
 
-    JazzValue notEqual(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue notEqual(const DapValue& right, const ParserRuleContext& context) {
         return equal(right, context).value == TrueValue.value ? FalseValue : TrueValue;
     }
 
-    JazzValue or(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue or(const DapValue& right, const ParserRuleContext& context) {
         return isTruthy(context) || right.isTruthy(context) ? TrueValue : FalseValue;
     }
 
@@ -100,9 +100,9 @@ public:
             printStream << std::get<double>(value);
         } else if (std::holds_alternative<std::string>(value)) {
             printStream << std::get<std::string>(value);
-        } else if (std::holds_alternative<std::vector<JazzValue>>(value)) {
+        } else if (std::holds_alternative<std::vector<DapValue>>(value)) {
             printStream << "{ ";
-            const auto& array = std::get<std::vector<JazzValue>>(value);
+            const auto& array = std::get<std::vector<DapValue>>(value);
             for (size_t i = 0; i < array.size(); ++i) {
                 array[i].printValue(printStream, false);
                 if (i < array.size() - 1) {
@@ -113,7 +113,7 @@ public:
         }
     }
 
-    JazzValue subtract(const JazzValue& right, const ParserRuleContext& context) {
+    DapValue subtract(const DapValue& right, const ParserRuleContext& context) {
         return arithmeticEvaluation(right, [](double a, double b) { return a - b; }, context);
     }
 
@@ -134,22 +134,22 @@ public:
     }
 
 private:
-    JazzValue arithmeticEvaluation(const JazzValue& right, BiFunction func, const ParserRuleContext& context) {
+    DapValue arithmeticEvaluation(const DapValue& right, BiFunction func, const ParserRuleContext& context) {
         double leftValue = underlyingNumber();
         double rightValue = right.underlyingNumber();
-        return JazzValue(std::invoke(func, leftValue, rightValue));
+        return DapValue(std::invoke(func, leftValue, rightValue));
     }
 
-    JazzValue compare(const JazzValue& right, BiFunction func, const ParserRuleContext& context) {
+    DapValue compare(const DapValue& right, BiFunction func, const ParserRuleContext& context) {
         double leftValue = underlyingNumber();
         double rightValue = right.underlyingNumber();
         return std::invoke(func, leftValue, rightValue) ? TrueValue : FalseValue;
     }
 };
 
-const JazzValue JazzValue::FalseValue = JazzValue(0.0);
-const JazzValue JazzValue::TrueValue = JazzValue(1.0);
-const JazzValue JazzValue::NullValue = JazzValue(std::vector<JazzValue>());
+const DapValue DapValue::FalseValue = DapValue(0.0);
+const DapValue DapValue::TrueValue = DapValue(1.0);
+const DapValue DapValue::NullValue = DapValue(std::vector<DapValue>());
 
 class SASParser {};
 

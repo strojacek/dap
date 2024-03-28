@@ -3,22 +3,22 @@
 #include <unordered_map>
 #include <deque>
 #include <stack>
-#include "JazzValue.h" // Assuming you have defined JazzValue
+#include "DapValue.h" // Assuming you have defined DapValue
 #include "UndefinedLabelException.h" // Assuming you have defined UndefinedLabelException
 #include "Sas_stmt_blockContext.h" // Assuming you have defined Sas_stmt_blockContext
 #include "Visitor.h" // Assuming you have defined Visitor
 
-class JazzInterpreterState {
+class DapInterpreterState {
 private:
-    std::unordered_map<std::string, JazzValue> memory;
-    std::unordered_map<std::string, JazzSubroutine> subroutines;
+    std::unordered_map<std::string, DapValue> memory;
+    std::unordered_map<std::string, DapSubroutine> subroutines;
     std::unordered_map<std::string, Sas_stmt_blockContext> labeledBlock;
     std::string currentScript;
-    std::deque<JazzValue> dataSegment;
-    std::stack<JazzValue> poppedDataList;
+    std::deque<DapValue> dataSegment;
+    std::stack<DapValue> poppedDataList;
 
 public:
-    std::deque<JazzValue>& getDataSegment() {
+    std::deque<DapValue>& getDataSegment() {
         return dataSegment;
     }
 
@@ -26,7 +26,7 @@ public:
         labeledBlock[labelName] = blockContext;
     }
 
-    JazzValue gotoLabel(const std::string& labelName, Visitor& visitor, ParserRuleContext& context) {
+    DapValue gotoLabel(const std::string& labelName, Visitor& visitor, ParserRuleContext& context) {
         auto it = labeledBlock.find(labelName);
         if (it != labeledBlock.end()) {
             return visitor.visit(it->second);
