@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
-#include "DapInterpreterState.h" // Assuming you have a header file for DapInterpreterState
-#include "DapValue.h" // Assuming you have a header file for DapValue
+#include "interpreter/DapInterpreterState.hpp" // Assuming you have a header file for DapInterpreterState
+#include "languageModels/DapValue.hpp" // Assuming you have a header file for DapValue
 #include "SASBaseVisitor.h" // Assuming you have a header file for SASBaseVisitor
 #include "SASParser.h" // Assuming you have a header file for SASParser
 #include "Table.h" // Assuming you have a header file for Table
