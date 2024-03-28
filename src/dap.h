@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+// Inclusion of GSL headers
 #include <gsl/gsl_math.h>
 
 /*  Copyright (C) 2001, 2002 Free Software Foundation, Inc.
