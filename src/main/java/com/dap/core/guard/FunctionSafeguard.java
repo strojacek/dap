@@ -20,8 +20,8 @@
 
 package com.dap.core.guard;
 
-import dap.DapParser;
-import org.dap.error.functions.FunctionArityException;
+import com.dap.parser.SASParser;
+import com.dap.error.functions.FunctionArityException;
 
 import java.util.function.Function;
 
@@ -36,7 +36,7 @@ public class FunctionSafeguard {
      * @param context The function call arguments parsing context
      * @param guard The guard function, that is applied to the number of arguments that were used when the function was invoked.
      */
-    public static void guaranteeArityIsNotViolated(String functionName, DapParser.FunctionCallArgsContext context,
+    public static void guaranteeArityIsNotViolated(String functionName, SASParser.FunctionCallArgsContext context,
                                                    Function<Integer, Boolean> guard) throws FunctionArityException {
         if (!guard.apply(context.expression().size())) {
             throw new FunctionArityException(functionName + " can not be called with " + context.expression().size() + " arguments", context);

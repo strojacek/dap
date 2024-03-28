@@ -1,4 +1,4 @@
-package com.jazz.core;
+package com.dap.core;
 
 /**
  * @file IOFFormatter.java

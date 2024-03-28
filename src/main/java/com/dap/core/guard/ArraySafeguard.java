@@ -20,11 +20,11 @@
 
 package com.dap.core.guard;
 
-import dap.DapParser;
+import com.dap.parser.DapParser;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.dap.languageModels.DapValue;
-import org.dap.error.arrays.ArrayDimensionMismatchException;
-import org.dap.error.arrays.ArrayDimensionUnsupportedException;
+import com.dap.languageModels.DapValue;
+import com.dap.error.arrays.ArrayDimensionMismatchException;
+import com.dap.error.arrays.ArrayDimensionUnsupportedException;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class ArraySafeguard {
      *
      * @param expressionContexts The argument that is safeguarded
      */
-    public static void guaranteeArrayDimensionCountIsValid(List<DapParser.ExpressionContext> expressionContexts)
+    public static void guaranteeArrayDimensionCountIsValid(List<SASParser.ExpressionContext> expressionContexts)
             throws ArrayDimensionUnsupportedException{
         if (expressionContexts.size() > 3 || expressionContexts.size() == 0) {
             throw new ArrayDimensionUnsupportedException(
@@ -69,7 +69,7 @@ public class ArraySafeguard {
      * @param array The array that is accessed
      * @param expressionContexts The parsing context of the expressions that specified the dimension
      */
-    public static void guaranteeArrayDimensionsMatch(DapValue array, List<DapParser.ExpressionContext> expressionContexts) {
+    public static void guaranteeArrayDimensionsMatch(DapValue array, List<SASParser.ExpressionContext> expressionContexts) {
         switch (expressionContexts.size()) {
             case 1:
                 if (!array.isAnOneDimensionalArrayValue()) {

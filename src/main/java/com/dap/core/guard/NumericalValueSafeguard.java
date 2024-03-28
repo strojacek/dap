@@ -21,7 +21,7 @@
 package com.dap.core.guard;
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.dap.error.labels.InvalidNumericalFormatException;
+import com.dap.error.labels.InvalidNumericalFormatException;
 
 /**
  * @brief Guarding functions for numerical JBASIC values.

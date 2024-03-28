@@ -20,11 +20,11 @@
 
 package com.dap.core.guard;
 
-import dap.DapParser;
+import com.dap.parser.SASParser;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.dap.error.type.TypeException;
-import org.dap.error.variable.UndefinedVariableException;
-import org.dap.languageModels.DapValue;
+import com.dap.error.type.TypeException;
+import com.dap.error.variable.UndefinedVariableException;
+import com.dap.languageModels.DapValue;
 
 /**
  * @brief Guarding functions for JBASIC variables.
@@ -53,7 +53,7 @@ public class VariableSafeguard {
      * @param assignedValue The value that is safeguarded
      * @param context The parsing context where the value was used
      */
-    public static void guaranteeVariableSuffixIsNotViolated(DapValue assignedValue, DapParser.VariableSuffixContext context)
+    public static void guaranteeVariableSuffixIsNotViolated(DapValue assignedValue, SASParser.VariableSuffixContext context)
             throws TypeException {
         if ("$".equals(context.getText())) {
             if (!assignedValue.isAStringValue()) {
