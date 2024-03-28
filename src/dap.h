@@ -6,6 +6,25 @@
 // Inclusion of GSL headers
 #include <gsl/gsl_math.h>
 
+// Inclusion of R Math library
+#define MATHLIB_STANDALONE 
+#include <Rmath.h>
+
+// Inclusion of C Spline library headers
+#include "libs/csmoothspline/c_bsplvb.h"
+#include "libs/csmoothspline/c_bsplvd.h"
+#include "libs/csmoothspline/c_bvalue.h"
+#include "libs/csmoothspline/c_daxpy.h"
+#include "libs/csmoothspline/c_ddot.h"
+#include "libs/csmoothspline/c_dpbfa.h"
+#include "libs/csmoothspline/c_dpbsl.h"
+#include "libs/csmoothspline/c_sgram.h"
+#include "libs/csmoothspline/c_sslvrg.h"
+#include "libs/csmoothspline/c_stxwx.h"
+#include "libs/csmoothspline/interv.h"
+#include "libs/csmoothspline/sbart.h"
+#include "libs/csmoothspline/sbart.c"
+
 /*  Copyright (C) 2001, 2002 Free Software Foundation, Inc.
  *
  *  This file is part of Dap.
