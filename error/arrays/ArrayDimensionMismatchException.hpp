@@ -2,7 +2,7 @@
 #include <string>
 #include "antlr4-runtime.h"
 #include "error/InterpreterBaseException.h" // Assuming you have defined InterpreterBaseException
-#include "IOFormatter.h" // Assuming you have defined IOFormatter
+#include "core/IOFormatter.hpp" // Assuming you have defined IOFormatter
 
 class ArrayDimensionMismatchException : public InterpreterBaseException {
 public:

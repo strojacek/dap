@@ -2,12 +2,12 @@
 #include <string>
 #include <memory>
 #include "antlr4-runtime.h"
-#include "SASLexer.h"
-#include "SASParser.h"
-#include "SASVisitor.h"
-#include "IOFormatter.h"
-#include "DapInterpreterState.h"
-#include "ErrorListener.h"
+#include "parser/SASLexer.h"
+#include "parser/SASParser.h"
+#include "parser/SASVisitor.h"
+#include "core/IOFormatter.hpp"
+#include "interpreter/DapInterpreterState.hpp"
+#include "error/ErrorListener.hpp"
 
 class DapInterpreter {
 private:

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "antlr4-runtime.h"
-#include "IOFormatter.hpp"
+#include "core/IOFormatter.hpp"
 
 class InterpreterBaseException : public std::runtime_error {
 private:
