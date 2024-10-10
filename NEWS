@@ -1,0 +1,162 @@
+Also see ChangeLog for detailed fixes and additions
+
+If you use dap, please let me know about your
+experience using it, and suggestions, by mailing
+to <bug-dap@gnu.org>. Thanks.
+2014/04/16 Version 3.10 . Add proc survey select on method sys and srs
+2014/03/19 Version 3.9 . Add proc import 
+
+2013/04/26 Version 3.8 . Overall Build system update and other fixes.
+2008/02/18 Version 3.7: Update to GPLv3.
+           Use latest versions of Automake and Autoconf.
+2004/01/11 Version 3.0: Implemented the reading of SBS
+           source files; see ChangeLog and the manual
+           for details and progress.
+2003/05/04 Version 2.2: Implemented function "catcon"
+           which allows testing of contrasts for
+           models obtained from function "categ".
+2003/04/30 Version 2.2: Function "categ" now writes
+           a dataset with the estimates, ASEs, and
+           the entries in the covariance matrix.
+2003/01/20 Version 2.1: Implemented function "loglin",
+           for loglinear models, as documented in the
+           manual.
+2003/01/10 Version 2.0: Dap has a new front end, with
+           all control residing in an Emacs session.
+2002/12/24 Version 1.8: Function "normal" now reports
+           results of Shapiro-Wilk in the lst file and
+           gives the option to skip plotting.
+           The table for function "lsmeans" now come
+           out with the variables sorted by their LS
+           means values.
+2002/11/21 Verson 1.7: added function "join" as
+           documented in manual.
+           Implemented variable exclusion using
+           initial '!' for function "merge".
+           Add axis labeling feature to functions
+           "plotlinreg" and "plotlogreg".
+2002/11/20 Verson 1.7: added function "split" as
+           documented in manual.
+2002/11/19 Version 1.7: Changed axis specification
+           characters, as indicated in the documentation,
+           to avoid conflicts with uppercase directives
+           for functions calling "pict_autoaxes" and
+           fixed labeling.
+2002/11/07 Version 1.7: Function "pctiles" now allows
+           up to 9 user defined percentages.
+2002/10/30 Version 1.7: In function "plotmeans"
+           added variable "style" to call and allowed
+           axis name specifications as in function
+           "plot".
+2002/01/17 Version 1.6: In function "dap_maximize",
+           compute maximization steps in each
+           coordinate direction in succession and then
+           take a maximization step in that direction.
+           Performance is greatly improved.
+2001/12/30 Version 1.6: In function "outset": if variable
+           list begins with '!' then named variables are
+           excluded from the output dataset and all
+           others are retained.
+2001/12/30 Version 1.5: Implemented functions "pict_save"
+           and "pict_rest", as documented in manual.
+2001/12/27 Version 1.5: Printout for function "categ" now
+           indicates which parameters are in the model.
+2001/12/18 Version 1.5: Added new "style" parameters to
+           functions "plotlinreg" and "plotlogreg" and
+           passed these on in the call to function "plot".
+           Added "MAXY" option to style specification for
+           function "histogram".
+2001/12/11 Version 1.5: in function "pict_autoaxes", added
+           MINX, MAXX, MINY, MAXY, NXTICKS, and NYTICKS
+           capability to the "axspec" parameter. Made
+           function "plot" pass such capabilities on to
+           "pict_autoaxes".
+2001/11/19 Version 1.5: In function "group", changed
+           "WIDTH" and "COUNT" to '^' and '#", respectively,
+           and made them attached to the number of groups;
+           in function "group", checked for NaN values of
+           grouping variables and don't cound observation
+           if there are any.
+2001/11/15 Version 1.5: In function "group", changed
+           "NUMBER", "FRACTION", "PERCENT" to
+           "#", "/", "%", respectively and allow
+           variables to follow, after starting and
+           direction specification, if any, and don't
+           count observation if any of those variables
+           has a nonfinite value.
+2001/11/14 Version 1.4: In function "pctile", added
+           printing of RANGE.
+2001/11/01 Version 1.4: In function "step", return 0
+           if zero-length line read.
+2001/10/31 Version 1.4: In functions "means",
+           incorporated testing for and only including in
+           computations non-NaN values in data.
+           Incorporated testing only for NaNs in
+           functions "pctiles", "corr", "group", "trim",
+           "plot", and "normal".
+2001/10/15 Version 1.4: In function "histogram", if there
+           are missing values this is now reported to
+           the .err file instead of the .log file.
+           Added "style" options "MIN" and "MAX" to
+           function "histogram". Deleted
+           "style" option ZERO (which was never
+           documented in the manual).
+2001/10/01 Version 1.3: Added statistics to function
+           "means": VARM (variance of the mean with
+           df = number of observations - 1)), VARMFREQ
+           (variance of the mean with df = sum of
+           weights - 1).
+2001/09/28 Version 1.3: Removed clumsy function
+           "dap_param"; now header file dap.h does
+           #ifdef to determine whether user defined
+           parameters ABOVE #include <dap.h>,
+           otherwise sets defaults.
+2001/09/27 Version 1.3: Write errors to .err file,
+           report lines read, written to .log file;
+           only display .err automatically.
+2001/09/24 Version 1.3: Incorporated weighted
+           percentiles into function "pctile" by adding
+           a weight variable and values.
+2001/09/15 Version 1.3: Renamed "probn" and "npoint" to
+           "probz" and "zpoint", resp.
+2001/09/15 Version 1.2: Renamed functions "invprobchisq",
+           "invprobf", "invprobn", and "invprobt" to
+           "chisqpoint", "fpoint", "npoint", and "tpoint".
+2001/09/14 Added parameters "marks" and "nmarks" to
+           functions "plotlinreg" and "plotlogreg" so that
+           they could process files that are partitioned.
+
+Dap is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+2001/11/15 Version 1.5: for "group", changed
+           "NUMBER", "FRACTION", "PERCENT" to
+           "#", "/", "%", respectively and
+           allow variables to follow, after
+           starting and direction specification,
+           if any, and don't count observation if
+           any of those variables has a nonfinite
+           value.
+2001/10/15 Version 1.4: minimum and maximum points of
+           histograms can now be specified.
+2001/09/22 Version 1.3: incorporated weighted
+           percentiles into function "pctile"; renamed
+           functions "probn" and "npoint" to "probz" and
+           "zpoint", respectively.
+2001/09/15 Renamed functions "invprobchisq", "invprobf",
+           "invprobn", and "invprobt" to "chisqpoint",
+           "fpoint", "npoint", and "tpoint", resp.
+2001/09/14 In version 1.2, the capabilites and syntax
+           of functions "plotlinreg" and "plotlogreg"
+           have been modified to allow processing of
+           datasets that are partitioned.
