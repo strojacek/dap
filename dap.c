@@ -33,7 +33,7 @@
 #define GCC "/usr/bin/gcc"
 #ifdef __linux__
 #define PS "/usr/bin/X11/gv"
-#elif _APPLE_
+#elif __APPLE__
 #define PS "/opt/homebrew/bin/evince"
 #endif
 
