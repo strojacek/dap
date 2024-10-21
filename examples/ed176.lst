@@ -1,0 +1,149 @@
+
+=================================
+Dap   1. Mon Jan 12 03:27:07 2004
+
+
+Response variable: y
+
+Treatment       Levels
+--------        ------
+rep             1 2
+current         1 2 3 4
+time            1 2 3 4
+number          1 2 3
+
+
+=================================
+Dap   2. Mon Jan 12 03:27:08 2004
+
+
+Testing Ho: rep current time current*time number current*number time*number current*time*number
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 5782.92, df = 48, MS = 120.477
+Residual SS = 3199.49, df = 47, MS = 68.0742
+R-sq = 0.643805
+F0 = 1.76979
+Prob[F > F0] = 0.02614
+
+=================================
+Dap   3. Mon Jan 12 03:27:09 2004
+
+
+Testing Ho: rep
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 605.01, df = 1, MS = 605.01
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 8.88751
+Prob[F > F0] = 0.00454
+
+=================================
+Dap   4. Mon Jan 12 03:27:10 2004
+
+
+Testing Ho: current
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 2145.45, df = 3, MS = 715.149
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 10.5054
+Prob[F > F0] = 0.00003
+
+=================================
+Dap   5. Mon Jan 12 03:27:11 2004
+
+
+Testing Ho: time
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 223.115, df = 3, MS = 74.3715
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 1.09251
+Prob[F > F0] = 0.36159
+
+=================================
+Dap   6. Mon Jan 12 03:27:12 2004
+
+
+Testing Ho: number
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 447.438, df = 2, MS = 223.719
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 3.28639
+Prob[F > F0] = 0.04615
+
+=================================
+Dap   7. Mon Jan 12 03:27:12 2004
+
+
+Testing Ho: current*time
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 298.677, df = 9, MS = 33.1863
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 0.487502
+Prob[F > F0] = 0.87562
+
+=================================
+Dap   8. Mon Jan 12 03:27:13 2004
+
+
+Testing Ho: current*number
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 644.396, df = 6, MS = 107.399
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 1.57768
+Prob[F > F0] = 0.17468
+
+=================================
+Dap   9. Mon Jan 12 03:27:14 2004
+
+
+Testing Ho: time*number
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 367.979, df = 6, MS = 61.3299
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 0.900926
+Prob[F > F0] = 0.50231
+
+=================================
+Dap  10. Mon Jan 12 03:27:15 2004
+
+
+Testing Ho: current*time*number
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 1050.85, df = 18, MS = 58.3808
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 0.857605
+Prob[F > F0] = 0.62758
+
+=================================
+Dap  11. Mon Jan 12 03:27:18 2004
+
+curr 1 vs curr 2
+
+Testing Ho: current
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 99.1875, df = 1, MS = 99.1875
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 1.45705
+Prob[F > F0] = 0.23345
+
+=================================
+Dap  12. Mon Jan 12 03:27:21 2004
+
+Testing time within level 3 of current
+
+Testing Ho: time
+Denominator: rep*current rep*time rep*current*time rep*number rep*current*number rep*time*number rep*current*time*number
+Number of observations = 96
+H0 SS = 34.8333, df = 3, MS = 11.6111
+Residual SS = 3199.49, df = 47, MS = 68.0742
+F0 = 0.170565
+Prob[F > F0] = 0.91575
