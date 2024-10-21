@@ -103,7 +103,7 @@ char *dap_malloc(int nbytes, char *mesg)
     }
   if (dap_memtrace)
     {
-      fprintf(dap_log, "malloc %x %s\n", (unsigned int) m, mesg);
+      fprintf(dap_log, "malloc %x %s\n", (unsigned int)(size_t) m, mesg);
       fflush(dap_log);
       if (dap_mabort && m == dap_memtrace)
 	abort();
@@ -116,7 +116,7 @@ void dap_free(void *ptr, char *mesg)
   nfrees++;
   if (dap_memtrace)
     {
-      fprintf(dap_log, "free %x %s\n", (unsigned int) ptr, mesg);
+      fprintf(dap_log, "free %x %s\n", (unsigned int)(size_t) ptr, mesg);
       fflush(dap_log);
       if (dap_fabort && ptr == dap_memtrace)
 	abort();
@@ -148,7 +148,7 @@ static void initdo(dataobs *dato)
 /* the following variables are for determining endianness */
 static double testd; /* a double, half of whose contents will be converted to an... */
 static unsigned int *ptesti; /* unsigned int to see if they are
-			      /* zero (mantissa) or not (exponent and sign
+			       zero (mantissa) or not (exponent and sign
 			       */
 
 int main(int argc, char **argv)
@@ -220,9 +220,9 @@ int main(int argc, char **argv)
     }
   dap_ono = 0;
   testd = -2.0; /* this should have the sign bit set and non-zero exponent, but
-		   /* zero mantissa
+		    zero mantissa
 		    */
-  ptesti = (int *) &testd; /* *ptesti is the low order word of testd */
+  ptesti = (unsigned int *) &testd; /* *ptesti is the low order word of testd */
   if (!(*ptesti))
     { /* if that's zero, then the sign and exponent are in the high-order word */
       dap_dbllow = 0;
@@ -3027,7 +3027,7 @@ CharList extractWords(char * buffer, long size,char  *delimiter)
 		{
 			current->word= (char*) malloc (sizeof(char)*sIndex+5);
 			strcpy(current->word,bufferWord);
-			current->next= (char*) malloc (sizeof(CharList));
+			current->next= (CharList*) malloc (sizeof(CharList));
 			current=current->next;
 			sSize=sIndex;
 			sIndex=0;

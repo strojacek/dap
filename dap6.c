@@ -34,7 +34,7 @@ extern char *dap_dapname;
 static double *allparam;
 static char *sel;
 static char *selred;
-static double (*ex)();
+static double (*ex)(double);
 static double **tab;
 static int nc;
 
@@ -1127,7 +1127,7 @@ void loglin(char *fname, char *varlist, char *model0, char *model1, char *part)
   for (nterm = 1, nv = 0; nv < nclass; nv++)
     nterm *= 2;
   term = (int *) dap_malloc(sizeof(int) * nterm, "");
-  pattern = (int *) dap_malloc(sizeof(int) * nclass, "");
+  pattern = (unsigned int *) dap_malloc(sizeof(int) * nclass, "");
   for (c = 1, pattern[0] = 1; c < nclass; c++)
     pattern[c] = 2 * pattern[c - 1];
   nterm = llparse(class, nterm, pattern, model0, model1, term);
