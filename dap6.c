@@ -34,7 +34,7 @@ extern char *dap_dapname;
 static double *allparam;
 static char *sel;
 static char *selred;
-static double (*ex)(double);
+static double (*ex)(double*, double*);
 static double **tab;
 static int nc;
 
