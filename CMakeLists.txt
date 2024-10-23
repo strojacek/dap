@@ -4,7 +4,9 @@ cmake_minimum_required(VERSION 3.10)
 project(DAP VERSION 3.11)
 
 # Include Subdirectories
-
+add_subdirectory(xlsxio)
+add_subdirectory(rmath)
+add_subdirectory(gsl)
 
 # Define executable targets
 add_executable(dap dap.c)
