@@ -1,6 +1,6 @@
 # Gnu Dap
 
-1. INTRODUCTION
+## Introduction
 
 Gnu Dap is an open source compiler for the SAS language.
 Gnu Dap converts SAS code to C code, which is then ran on the user's computer, using the native C compiler.
@@ -10,7 +10,7 @@ Because Dap processes files one line at a time, rather than reading entire files
 Dap is a GNU program and is free software distributed under a GNU-style copyleft.
 See the file COPYING for details.
 
-2. Features
+## Features
 
 Gnu Dap has the following features:
 
@@ -50,14 +50,14 @@ Gnu Dap has the following features:
   - proc import: CSV, DBF, and Tab delimited files currently
   - proc surveyselect
 
-1. Contributors:
+## Contributors
 
 - Susan Bassein
 - Anna Reidenbach
 - Jeffrin Jose
 - Seth Trojacek
 
-Next steps:
+## Next Steps
 
 - Implementing cards/datalines/datalines4 functionality.
 - NaN/NULL value handling
