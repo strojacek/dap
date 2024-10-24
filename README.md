@@ -60,6 +60,7 @@ Gnu Dap has the following features:
 ## Next Steps
 
 - Implementing cards/datalines/datalines4 functionality.
+- Implementing do to loops
 - NaN/NULL value handling
 - proc glmmix
 - proc import: import .xlsx files
