@@ -1,59 +1,25 @@
-
-			THE BASIC DAP README
-
-	   (See "INSTALL" for help on installation)
+# Gnu Dap
 
 1. INTRODUCTION
 
-This directory and its subdirectories contain the source code for
-Dap, which is a small statistics and graphics package based on C.  
-It provides core methods of data management, analysis, and graphics
-that are commonly used in statistical consulting practice.  Anyone
-familiar with the basic syntax of C programs can learn to use Dap
-quickly and easily from the manual and the examples contained in
-it; advanced features of C are not necessary, although they are
-available.  (The manual contains a brief introduction to the C
-syntax needed for Dap.)  Because Dap processes files one line at a
-time, rather than reading entire files into memory, it can be, and
-has been, used on data sets that have very many lines and/or very
-many variables.
+Gnu Dap is an open source implementation for the SAS (Statistical Analysis System), programming language (or at least strives to be, we consider missing features bugs). Gnu Dap is a compiler for the SAS language, and converts the code to C code, which is then ran on the user's computer, using the native C compiler. 
+
+Because Dap processes files one line at a time, rather than reading entire files into memory, it can be, and has been, used on data sets that have very many lines and/or very many variables.
 
 Dap is a GNU program and is free software distributed under a
-GNU-style copyleft. See the file COPYING for details.  The Dap home page
-is http://www.gnu.org/software/dap.
+GNU-style copyleft. See the file COPYING for details.
 
-2. GOALS
+2. Features
 
-I wrote Dap to use in my statistical consulting practice because
-the utterly famous, industry standard statistics system (you
-know the one I mean) is not available on GNU/Linux and costs a
-bundle every year under a lease arrangement. I was generally happy
-with that system, except for the graphics, which were all but
-impossible to use,  but there were a number of clumsy constructs
-left over from its ancient origins. Thus, I decided to mimic
-the core of the functionality of that system in the context of
-the C language, which allows much more programming flexibility.
+Gnu Dap has the following features:
 
-3. DISCLAIMER
+- Data Steps:
 
-The thing works, but there are some definite "home brew" aspects
-to Dap. Anyone wishing to beautify the computations of
-significances or other aspects, which appear to be correct but are
-done my own idiosyncratic way, has my blessing.  If I ever get
-more time in the future to devote to that, I may do it myself, but
-since it all seems to work pretty well as is, there is not a whole
-lot of incentive for me to do so.
 
-4. BUG REPORTS AND COMMENTS
+- Proc Steps:
 
-Send bug reports to <bug-dap@gnu.org>.
 
-If you use dap, please let me know about your
-experience using it, and suggestions, also by mailing
-to <bug-dap@gnu.org>. (Don't worry that it's not a bug report!)
-Thanks.
-
-Contributors:
+3. Contributors:
 
 - Susan Bassein
 - Anna Reidenbach
