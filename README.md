@@ -63,8 +63,10 @@ Next steps:
 - NaN/NULL value handling
 - proc glmmix
 - proc import: import/export .xlsx files
-- proc sgplot: Using Gnuplot, instead of current PostScript usage
+- proc sgplot/plot/chart: Using Gnuplot, instead of current PostScript usage
 - Native functionality on Windows (works on MacOS, Linux and WSL).
 - SAS macro language
 - proc mcmc
 - proc sql
+- proc R
+- Read .sas7bdat, .sas7cat and XPORT files
