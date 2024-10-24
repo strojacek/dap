@@ -62,7 +62,8 @@ Gnu Dap has the following features:
 - Implementing cards/datalines/datalines4 functionality.
 - NaN/NULL value handling
 - proc glmmix
-- proc import: import/export .xlsx files
+- proc import: import .xlsx files
+- proc export
 - proc sgplot/plot/chart: Using Gnuplot, instead of current PostScript usage
 - Native functionality on Windows (works on MacOS, Linux and WSL).
 - SAS macro language
