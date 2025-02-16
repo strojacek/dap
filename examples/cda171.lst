@@ -1,0 +1,177 @@
+
+=================================
+Dap   1. Mon Jan 12 03:19:54 2004
+
+(DV, P) vs (D, V, P)
+
+Loglinear model:
+numerical indexes of classification variables
+
+Number  defendant  victim  penalty
+------  ---------  ------  -------
+     1  black      black   no     
+     2  white      white   yes    
+
+
+=================================
+Dap   2. Mon Jan 12 03:19:55 2004
+
+(DV, P) vs (D, V, P)
+
+Maximum likelihood estimation
+
+Cell count: n
+Class and aux variables: _defendant _victim _penalty
+
+Statistic              df      Prob
+G2[Model]   =   8.13    3    0.0434
+G2[Reduced] = 137.93    4    0.0001
+G2[Diff]    = 129.80    1    0.0001
+X2[Model]   =   6.98    3    0.0727
+
+    Estimate          ASE  Model  Parameter
+     2.83789     0.117031    *    _mu
+     0.39084    0.0946427    *    defendant:1
+   -0.582116    0.0946427    *    victim:1
+    0.827863    0.0946427    ?    defendant*victim:1:1
+     1.04323    0.0883545    *    penalty:1
+
+
+=================================
+Dap   3. Mon Jan 12 03:19:55 2004
+
+(DV, P) vs (D, V, P)
+
+                               n for _type_ / penalty
+===========================================================
+|                             |FIT          |OBS          |
+|--------------+--------------|------+------+------+------|
+|defendant     |victim        |no    |yes   |no    |yes   |
+|==============|==============|======|======|======|======|
+|black         |black         | 91.63| 11.37| 97.00|  6.00|
+|              |--------------|------+------+------+------|
+|              |white         | 56.04|  6.96| 52.00| 11.00|
+|--------------+--------------|------+------+------+------|
+|white         |black         |  8.01|  0.99|  9.00|  0.00|
+|              |--------------|------+------+------+------|
+|              |white         |134.33| 16.67|132.00| 19.00|
+-----------------------------------------------------------
+
+=================================
+Dap   4. Mon Jan 12 03:19:55 2004
+
+(DV, VP) vs (DV, P)
+
+Loglinear model:
+numerical indexes of classification variables
+
+Number  defendant  victim  penalty
+------  ---------  ------  -------
+     1  black      black   no     
+     2  white      white   yes    
+
+
+=================================
+Dap   5. Mon Jan 12 03:19:55 2004
+
+(DV, VP) vs (DV, P)
+
+Maximum likelihood estimation
+
+Cell count: n
+Class and aux variables: _defendant _victim _penalty
+
+Statistic              df      Prob
+G2[Model]   =   1.88    2    0.3903
+G2[Reduced] =   8.13    3    0.0434
+G2[Diff]    =   6.25    1    0.0125
+X2[Model]   =   1.43    2    0.4889
+
+    Estimate          ASE  Model  Parameter
+     2.72369      0.13779    *    _mu
+     0.39084    0.0946425    *    defendant:1
+    -0.79861      0.13779    *    victim:1
+    0.827913    0.0946425    *    defendant*victim:1:1
+      1.1713     0.115885    *    penalty:1
+    0.264535     0.115885    ?    victim*penalty:1:1
+
+
+=================================
+Dap   6. Mon Jan 12 03:19:55 2004
+
+(DV, VP) vs (DV, P)
+
+                               n for _type_ / penalty
+===========================================================
+|                             |FIT          |OBS          |
+|--------------+--------------|------+------+------+------|
+|defendant     |victim        |no    |yes   |no    |yes   |
+|==============|==============|======|======|======|======|
+|black         |black         | 97.48|  5.52| 97.00|  6.00|
+|              |--------------|------+------+------+------|
+|              |white         | 54.17|  8.83| 52.00| 11.00|
+|--------------+--------------|------+------+------+------|
+|white         |black         |  8.52|  0.48|  9.00|  0.00|
+|              |--------------|------+------+------+------|
+|              |white         |129.83| 21.17|132.00| 19.00|
+-----------------------------------------------------------
+
+=================================
+Dap   7. Mon Jan 12 03:19:55 2004
+
+(DV, DP, VP) vs (DV, VP)
+
+Loglinear model:
+numerical indexes of classification variables
+
+Number  defendant  victim  penalty
+------  ---------  ------  -------
+     1  black      black   no     
+     2  white      white   yes    
+
+
+=================================
+Dap   8. Mon Jan 12 03:19:55 2004
+
+(DV, DP, VP) vs (DV, VP)
+
+Maximum likelihood estimation
+
+Cell count: n
+Class and aux variables: _defendant _victim _penalty
+
+Statistic              df      Prob
+G2[Model]   =   0.70    1    0.4026
+G2[Reduced] =   1.88    2    0.3903
+G2[Diff]    =   1.18    1    0.2772
+X2[Model]   =   0.38    1    0.5401
+
+    Estimate          ASE  Model  Parameter
+     2.69211     0.142941    *    _mu
+    0.479402     0.124301    *    defendant:1
+   -0.854001     0.146841    *    victim:1
+    0.839499    0.0954928    *    defendant*victim:1:1
+     1.20005     0.119974    *    penalty:1
+   -0.110105     0.100222    ?    defendant*penalty:1:1
+    0.331103     0.129837    *    victim*penalty:1:1
+
+
+=================================
+Dap   9. Mon Jan 12 03:19:55 2004
+
+(DV, DP, VP) vs (DV, VP)
+
+                               n for _type_ / penalty
+===========================================================
+|                             |FIT          |OBS          |
+|--------------+--------------|------+------+------+------|
+|defendant     |victim        |no    |yes   |no    |yes   |
+|==============|==============|======|======|======|======|
+|black         |black         | 97.33|  5.67| 97.00|  6.00|
+|              |--------------|------+------+------+------|
+|              |white         | 51.67| 11.33| 52.00| 11.00|
+|--------------+--------------|------+------+------+------|
+|white         |black         |  8.67|  0.33|  9.00|  0.00|
+|              |--------------|------+------+------+------|
+|              |white         |132.33| 18.67|132.00| 19.00|
+-----------------------------------------------------------

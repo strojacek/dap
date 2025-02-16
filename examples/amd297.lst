@@ -1,0 +1,217 @@
+
+=================================
+Dap   1. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+Response variable: yield
+
+Treatment       Levels
+--------        ------
+fertilizer      1 2 3 4
+block           1 2
+variety         1 2
+
+
+=================================
+Dap   2. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+Testing Ho: fertilizer block
+Denominator: fertilizer*block variety fertilizer*variety block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 171.293, df = 4, MS = 42.8231
+Residual SS = 19.1575, df = 11, MS = 1.74159
+R-sq = 0.899409
+F0 = 24.5885
+Prob[F > F0] = 0.00002
+
+=================================
+Dap   3. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+Testing Ho: fertilizer
+Denominator: fertilizer*block variety fertilizer*variety block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 40.19, df = 3, MS = 13.3967
+Residual SS = 19.1575, df = 11, MS = 1.74159
+F0 = 7.6922
+Prob[F > F0] = 0.00479
+
+=================================
+Dap   4. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+Testing Ho: block
+Denominator: fertilizer*block variety fertilizer*variety block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 131.102, df = 1, MS = 131.102
+Residual SS = 19.1575, df = 11, MS = 1.74159
+F0 = 75.2774
+Prob[F > F0] = 0.00001
+
+=================================
+Dap   5. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+Testing Ho: fertilizer 
+Denominator: fertilizer * block 
+EMS(fertilizer*block) =
+    2 Var(fertilizer*block)
+    1 Var(Error)
+EMS(fertilizer) =
+    4 Var(fertilizer)
+    2 Var(fertilizer*block)
+    1 Var(Error)
+Error for fertilizer =
+    1 MS(fertilizer*block)
+Number of observations = 16
+H0 SS = 40.19, df = 3, MS = 13.3967
+Residual df = 3, MS = 2.30917
+F0 = 5.80152
+Prob[F > F0] = 0.09137
+
+=================================
+Dap   6. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+Least-squares means for: fertilizer 
+
+LSD  method
+Minimum significant differences are for level 0.05000
+
+=================================
+Dap   7. Wed Mar 12 16:00:42 2014
+
+Whole plot (block, fertilizer) analysis
+
+                            _stat_ for _lsm_ / fertilizer
+================================================================================
+|                          |38.8        |39.4        |39.8        |42.9        |
+|--------+--------+--------|------------+------------+------------+------------|
+|_type_  |_LSMEAN_|_fertili|1           |3           |2           |4           |
+|========|========|========|============|============|============|============|
+|EFFN    |0       |        |           4|           4|           4|           4|
+|--------+--------+--------|------------+------------+------------+------------|
+|LSMDIFF |38.8    |1       |            |         0.6|           1|         4.1|
+|        |--------+--------|------------+------------+------------+------------|
+|        |39.4    |3       |        -0.6|            |         0.4|         3.5|
+|        |--------+--------|------------+------------+------------+------------|
+|        |39.8    |2       |          -1|        -0.4|            |         3.1|
+|        |--------+--------|------------+------------+------------+------------|
+|        |42.9    |4       |        -4.1|        -3.5|        -3.1|            |
+|--------+--------+--------|------------+------------+------------+------------|
+|MINDIFF |38.8    |1       |            |     3.41955|     3.41955|     3.41955|
+|        |--------+--------|------------+------------+------------+------------|
+|        |39.4    |3       |     3.41955|            |     3.41955|     3.41955|
+|        |--------+--------|------------+------------+------------+------------|
+|        |39.8    |2       |     3.41955|     3.41955|            |     3.41955|
+|        |--------+--------|------------+------------+------------+------------|
+|        |42.9    |4       |     3.41955|     3.41955|     3.41955|            |
+|--------+--------+--------|------------+------------+------------+------------|
+|PROB    |38.8    |1       |            |    0.615544|    0.420682|    0.031666|
+|        |--------+--------|------------+------------+------------+------------|
+|        |39.4    |3       |    0.615544|            |    0.734441|   0.0472285|
+|        |--------+--------|------------+------------+------------+------------|
+|        |39.8    |2       |    0.420682|    0.734441|            |   0.0632693|
+|        |--------+--------|------------+------------+------------+------------|
+|        |42.9    |4       |    0.031666|   0.0472285|   0.0632693|            |
+--------------------------------------------------------------------------------
+
+=================================
+Dap   8. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Response variable: yield
+
+Treatment       Levels
+--------        ------
+fertilizer      1 2 3 4
+block           1 2
+variety         1 2
+
+
+=================================
+Dap   9. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Testing Ho: fertilizer block fertilizer*block variety fertilizer*variety
+Denominator: block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 182.02, df = 11, MS = 16.5473
+Residual SS = 8.43, df = 4, MS = 2.1075
+R-sq = 0.955736
+F0 = 7.85161
+Prob[F > F0] = 0.03064
+
+=================================
+Dap  10. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Testing Ho: fertilizer
+Denominator: block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 40.19, df = 3, MS = 13.3967
+Residual SS = 8.43, df = 4, MS = 2.1075
+F0 = 6.35666
+Prob[F > F0] = 0.05300
+
+=================================
+Dap  11. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Testing Ho: block
+Denominator: block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 131.102, df = 1, MS = 131.102
+Residual SS = 8.43, df = 4, MS = 2.1075
+F0 = 62.2076
+Prob[F > F0] = 0.00140
+
+=================================
+Dap  12. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Testing Ho: variety
+Denominator: block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 2.25, df = 1, MS = 2.25
+Residual SS = 8.43, df = 4, MS = 2.1075
+F0 = 1.06762
+Prob[F > F0] = 0.35987
+
+=================================
+Dap  13. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Testing Ho: fertilizer*block
+Denominator: block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 6.9275, df = 3, MS = 2.30917
+Residual SS = 8.43, df = 4, MS = 2.1075
+F0 = 1.09569
+Prob[F > F0] = 0.44760
+
+=================================
+Dap  14. Wed Mar 12 16:00:42 2014
+
+Subplot (variety) analysis
+
+Testing Ho: fertilizer*variety
+Denominator: block*variety fertilizer*block*variety
+Number of observations = 16
+H0 SS = 1.55, df = 3, MS = 0.516667
+Residual SS = 8.43, df = 4, MS = 2.1075
+F0 = 0.245156
+Prob[F > F0] = 0.86125

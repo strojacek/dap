@@ -1,0 +1,448 @@
+This is dap, produced by makeinfo version 4.5 from dap.texi.
+
+INFO-DIR-SECTION Dap statistics and graphics package
+START-INFO-DIR-ENTRY
+* Dap: (dap).                The Dap statistics package
+END-INFO-DIR-ENTRY
+
+
+File: dap,  Node: Index,  Prev: FAQ,  Up: Top
+
+Index
+*****
+
+* Menu:
+
+* #define:                               The preprocessor.
+* _corr_:                                Correlations.
+* _term_:                                Analysis of variance.
+* _type_:                                Input and output.
+* _var1_:                                Correlations.
+* _var2_:                                Correlations.
+* abort <1>:                             Appendix III.
+* abort:                                 Invoking Dap.
+* analysis of variance <1>:              Analysis of variance examples.
+* analysis of variance:                  Analysis of variance.
+* ANOVA <1>:                             Analysis of variance examples.
+* ANOVA:                                 Analysis of variance.
+* append:                                Manage datasets.
+* arguments:                             Invoking Dap.
+* array <1>:                             Variables and operations.
+* array <2>:                             Variables.
+* array:                                 Reading files and datasets.
+* array of char:                         Description and example.
+* association:                           Categorical data analysis.
+* autoaxes:                              Axes.
+* axes:                                  Axes.
+* binary:                                Categorical data analysis examples.
+* binomial coefficient:                  Miscellaneous functions.
+* broken lines:                          Pict structure.
+* bug <1>:                               Appendix III.
+* bug <2>:                               Functions.
+* bug <3>:                               Analysis of variance.
+* bug:                                   Variables.
+* C:                                     Description and example.
+* caption <1>:                           Axes.
+* caption:                               Output files.
+* categ <1>:                             Statistics utilities.
+* categ:                                 Categorical data analysis.
+* categorical data:                      Categorical data analysis examples.
+* categorical data analysis <1>:         Statistics utilities.
+* categorical data analysis:             Categorical data analysis.
+* char, array:                           Description and example.
+* chart (SBS proc):                      Histogram.
+* chi-squared <1>:                       Categorical data analysis examples.
+* chi-squared <2>:                       Chi-squared distribution.
+* chi-squared:                           Categorical data analysis.
+* choose:                                Miscellaneous functions.
+* circle:                                Shapes.
+* CMH:                                   Categorical data analysis.
+* Cochran-Mantel-Haenszel <1>:           Categorical data analysis examples.
+* Cochran-Mantel-Haenszel:               Categorical data analysis.
+* column percentage:                     Categorical data analysis.
+* combinations:                          Miscellaneous functions.
+* command line arguments:                Invoking Dap.
+* commas, not:                           Variables.
+* comparing strings <1>:                 Loops and ifs.
+* comparing strings:                     Functions.
+* compiler:                              Invoking Dap.
+* compress:                              Transformations.
+* constants <1>:                         Appendix I.
+* constants:                             Reading files and datasets.
+* contingency table <1>:                 Categorical data analysis examples.
+* contingency table:                     Categorical data analysis.
+* contrasts:                             Analysis of variance.
+* control:                               Analysis of variance.
+* copy:                                  Manage datasets.
+* copying strings:                       Functions.
+* corr:                                  Correlations.
+* corr (SBS proc):                       Correlations.
+* correlation:                           Correlations.
+* count:                                 Categorical data analysis.
+* cross classification:                  Categorical data analysis examples.
+* cross tabulation:                      Categorical data analysis examples.
+* cross-classification:                  Categorical data analysis.
+* cross-tabulation:                      Categorical data analysis.
+* curve:                                 Shapes.
+* dap (SBS proc):                        Appendix IV.
+* dap.h:                                 Reading files and datasets.
+* dap1.h:                                Reading files and datasets.
+* dap_dl:                                The preprocessor.
+* dap_head:                              Output files.
+* dap_il:                                The preprocessor.
+* dap_list:                              Partitioning a dataset.
+* dap_main:                              The preprocessor.
+* dap_mark:                              Positioning within a dataset.
+* dap_newpart:                           Partitioning a dataset.
+* dap_rest:                              Modifying output.
+* dap_rewind:                            Positioning within a dataset.
+* dap_save:                              Modifying output.
+* dap_sets:                              Input and output.
+* dap_sl:                                The preprocessor.
+* dap_swap:                              Partitioning a dataset.
+* dap_vd:                                The preprocessor.
+* dappp:                                 Reading files and datasets.
+* darkness:                              Pict structure.
+* dashing:                               Pict structure.
+* data step (SBS):                       Appendix IV.
+* dataset <1>:                           Manage datasets.
+* dataset <2>:                           Positioning within a dataset.
+* dataset <3>:                           Input and output.
+* dataset <4>:                           Datasets.
+* dataset:                               Variables.
+* dataset in memory <1>:                 Input and output.
+* dataset in memory:                     Datasets.
+* dataset on disk <1>:                   Input and output.
+* dataset on disk:                       Datasets.
+* dataset, output:                       Input and output.
+* dataset, partitioning <1>:             Partitioning a dataset.
+* dataset, partitioning:                 Datasets.
+* dataset, small <1>:                    Input and output.
+* dataset, small:                        Datasets.
+* datasets (SBS proc):                   Manage datasets.
+* date:                                  Miscellaneous functions.
+* debugging:                             Invoking Dap.
+* declaration <1>:                       Variables and operations.
+* declaration <2>:                       Variables.
+* declaration:                           Reading files and datasets.
+* define:                                The preprocessor.
+* delimiter <1>:                         Datasets.
+* delimiter:                             Reading files and datasets.
+* diamonds:                              Pict structure.
+* dimension:                             Reading files and datasets.
+* display <1>:                           Graphics output file.
+* display:                               Displaying the pictures.
+* distribution-free:                     Nonparametric analyses.
+* double:                                Variables and operations.
+* Dunnett:                               Analysis of variance.
+* editor:                                Invoking Dap.
+* effects:                               Analysis of variance.
+* empirical distribution function:       Nonparametric analyses.
+* end of file:                           Input and output.
+* EOF:                                   Input and output.
+* error bar:                             Plotting means.
+* estimate:                              Statistics utilities.
+* exact test:                            Categorical data analysis.
+* execution <1>:                         Appendix I.
+* execution:                             Reading files and datasets.
+* expand:                                Transformations.
+* expected count:                        Categorical data analysis.
+* exploratory data analysis:             Invoking Dap.
+* extreme value:                         Miscellaneous functions.
+* extreme values:                        Trimming extreme values.
+* F distribution:                        F distribution.
+* F-test:                                Analysis of variance.
+* fill:                                  Manage datasets.
+* fill, darkness:                        Pict structure.
+* Fisher's exact test:                   Categorical data analysis.
+* Fisher's LSD:                          Analysis of variance.
+* fixed-width:                           Reading files and datasets.
+* font <1>:                              Text.
+* font:                                  Pict structure.
+* font size:                             Pict structure.
+* fraction:                              Categorical data analysis.
+* freq:                                  Categorical data analysis.
+* freq (SBS proc):                       Categorical data analysis.
+* glm (SBS proc):                        Analysis of variance.
+* graph:                                 Shapes.
+* graphics <1>:                          Graphics output file.
+* graphics <2>:                          Displaying the pictures.
+* graphics:                              Invoking Dap.
+* gray level:                            Pict structure.
+* group:                                 Grouping lines in a dataset.
+* hash:                                  Shapes.
+* header:                                Output files.
+* header file:                           Reading files and datasets.
+* header lines:                          Input and output.
+* histogram:                             Histogram.
+* I-beam:                                Pict structure.
+* independence:                          Categorical data analysis.
+* infile <1>:                            Variables.
+* infile:                                Reading files and datasets.
+* initialize:                            Pict structure.
+* input <1>:                             Input and output.
+* input:                                 Variables.
+* inset <1>:                             Variables.
+* inset:                                 Reading files and datasets.
+* insufficient memory:                   Reading files and datasets.
+* int:                                   Variables and operations.
+* interquartile range:                   One variable statistics.
+* invalid data:                          Input and output.
+* invert:                                Miscellaneous functions.
+* invoking Dap:                          Invoking Dap.
+* join:                                  Splitting and joining lines.
+* keep lst file:                         Invoking Dap.
+* Kendall's Tau-b:                       Categorical data analysis.
+* Kolmogorov:                            Nonparametric analyses.
+* landscape <1>:                         Graphics output file.
+* landscape:                             Displaying the pictures.
+* least square means:                    Analysis of variance.
+* line:                                  Elements.
+* line graph <1>:                        Pict structure.
+* line graph:                            Scatter plot or line graph.
+* line segments:                         Pict structure.
+* line width:                            Pict structure.
+* line, darkness:                        Pict structure.
+* linear regression <1>:                 Linear regression examples.
+* linear regression <2>:                 Regression plots.
+* linear regression:                     Linear regression.
+* link:                                  Pict structure.
+* local variable:                        Reading files and datasets.
+* log file:                              Output files.
+* logistic (SBS proc):                   Logistic regression.
+* logistic regression <1>:               Logistic regression reported a singular matrix.
+* logistic regression <2>:               Logistic regression examples.
+* logistic regression <3>:               Regression plots.
+* logistic regression <4>:               Logistic regression.
+* logistic regression:                   Categorical data analysis.
+* logit models <1>:                      Statistics utilities.
+* logit models:                          Categorical data analysis.
+* loglinear models <1>:                  Statistics utilities.
+* loglinear models:                      Categorical data analysis.
+* lower:                                 Transformations.
+* LSD:                                   Analysis of variance.
+* lsmeans:                               Analysis of variance.
+* lst file <1>:                          Output files.
+* lst file:                              Invoking Dap.
+* main <1>:                              Functions.
+* main:                                  The preprocessor.
+* Mann-Whitney-Wilcoxon:                 Nonparametric analyses.
+* manual:                                Description and example.
+* mark:                                  Positioning within a dataset.
+* match:                                 Merging datasets.
+* matrix:                                Miscellaneous functions.
+* maximize:                              Miscellaneous functions.
+* maximum:                               One variable statistics.
+* mean <1>:                              Plotting means.
+* mean:                                  One variable statistics.
+* mean squares:                          Analysis of variance.
+* means <1>:                             Plotting means.
+* means:                                 Trimming extreme values.
+* means (SBS proc):                      One variable statistics.
+* measures of association:               Categorical data analysis.
+* median:                                One variable statistics.
+* memory allocation:                     Reading files and datasets.
+* merge <1>:                             Merging datasets.
+* merge:                                 Variables.
+* minimize:                              Miscellaneous functions.
+* minimum:                               One variable statistics.
+* missing cells:                         Manage datasets.
+* missing data:                          Input and output.
+* model:                                 Analysis of variance.
+* move:                                  Transformations.
+* multiple definition error:             Reading files and datasets.
+* NaN <1>:                               Variables and operations.
+* NaN <2>:                               One variable statistics.
+* NaN:                                   Input and output.
+* nested design:                         Analysis of variance.
+* new part:                              Partitioning a dataset.
+* nland:                                 Displaying the pictures.
+* nominal:                               Categorical data analysis.
+* nonparametric:                         Nonparametric analyses.
+* normal <1>:                            Normal distribution.
+* normal:                                Normal probability plot.
+* normal probability plot:               Normal probability plot.
+* npar1way (SBS proc):                   Nonparametric analyses.
+* nport <1>:                             Displaying the pictures.
+* nport <2>:                             Plotting means.
+* nport <3>:                             Scatter plot or line graph.
+* nport <4>:                             Normal probability plot.
+* nport:                                 Histogram.
+* NULL <1>:                              Variables and operations.
+* NULL:                                  Variables.
+* null string <1>:                       Variables and operations.
+* null string:                           Variables.
+* number of observations:                One variable statistics.
+* odds ratio:                            Categorical data analysis.
+* order, sort:                           Sorting a dataset.
+* ordinal <1>:                           Categorical data analysis examples.
+* ordinal:                               Categorical data analysis.
+* orientation:                           Graphics output file.
+* outliers:                              Trimming extreme values.
+* output:                                Input and output.
+* output dataset:                        Input and output.
+* output, graphics <1>:                  Graphics output file.
+* output, graphics:                      Displaying the pictures.
+* outset <1>:                            Input and output.
+* outset:                                Variables.
+* page:                                  Graphics output file.
+* paired:                                Categorical data analysis.
+* parameters <1>:                        Appendix I.
+* parameters:                            Reading files and datasets.
+* partitioning:                          Partitioning a dataset.
+* partitioning a dataset:                Datasets.
+* partv:                                 Partitioning a dataset.
+* partvars:                              Datasets.
+* pattern:                               Pict structure.
+* patterns:                              Pict structure.
+* pctiles:                               One variable statistics.
+* percent:                               Categorical data analysis.
+* percent, row:                          Categorical data analysis.
+* percentage, column:                    Categorical data analysis.
+* percentile points:                     One variable statistics.
+* percentiles:                           One variable statistics.
+* pict structure:                        Pict structure.
+* pict, clear:                           Pict structure.
+* pict, initialize:                      Pict structure.
+* pict, link:                            Pict structure.
+* picture <1>:                           Graphics output file.
+* picture:                               Pict structure.
+* plot <1>:                              Regression plots.
+* plot <2>:                              Plotting means.
+* plot:                                  Scatter plot or line graph.
+* plot (SBS proc):                       Scatter plot or line graph.
+* plotmeans:                             Plotting means.
+* point:                                 Elements.
+* pointer:                               Variables and operations.
+* points:                                Pict structure.
+* portrait <1>:                          Graphics output file.
+* portrait:                              Displaying the pictures.
+* position:                              Positioning within a dataset.
+* preprocessor:                          Reading files and datasets.
+* print:                                 Displaying a dataset.
+* print (SBS proc):                      Displaying a dataset.
+* ps file:                               Invoking Dap.
+* q-q plot:                              Normal probability plot.
+* quartile:                              One variable statistics.
+* quotes:                                Functions.
+* radius:                                Pict structure.
+* raise:                                 Transformations.
+* random <1>:                            Uniform distribution.
+* random:                                Normal distribution.
+* range:                                 One variable statistics.
+* rank:                                  Grouping lines in a dataset.
+* rank (SBS proc):                       Grouping lines in a dataset.
+* read a line:                           Input and output.
+* reading this manual:                   Description and example.
+* rectangle:                             Shapes.
+* reg (SBS proc):                        Linear regression.
+* regression, linear <1>:                Linear regression examples.
+* regression, linear <2>:                Regression plots.
+* regression, linear:                    Linear regression.
+* regression, logistic <1>:              Logistic regression examples.
+* regression, logistic <2>:              Regression plots.
+* regression, logistic:                  Logistic regression.
+* remove:                                Manage datasets.
+* rename:                                Manage datasets.
+* rewind:                                Positioning within a dataset.
+* rotate:                                Transformations.
+* row percent:                           Categorical data analysis.
+* running Dap:                           Invoking Dap.
+* Satterthwaite:                         Analysis of variance.
+* SBS syntax <1>:                        Appendix IV.
+* SBS syntax:                            Description and example.
+* scale:                                 Transformations.
+* scatter plot <1>:                      Pict structure.
+* scatter plot:                          Scatter plot or line graph.
+* sd:                                    One variable statistics.
+* segments:                              Pict structure.
+* sem:                                   One variable statistics.
+* semi-colon:                            Appendix III.
+* settable parameters <1>:               Appendix III.
+* settable parameters <2>:               Appendix I.
+* settable parameters:                   Reading files and datasets.
+* Shapiro-Wilk:                          Normal probability plot.
+* shift:                                 Transformations.
+* show:                                  Graphics output file.
+* shrink:                                Transformations.
+* signed rank:                           Nonparametric analyses.
+* size <1>:                              Transformations.
+* size:                                  Pict structure.
+* size, font:                            Pict structure.
+* skip lines:                            Input and output.
+* solid areas, darkness:                 Pict structure.
+* Somers' D:                             Categorical data analysis.
+* sort:                                  Sorting a dataset.
+* sort (SBS proc):                       Sorting a dataset.
+* split:                                 Splitting and joining lines.
+* square:                                Shapes.
+* squares:                               Pict structure.
+* standard deviation <1>:                Plotting means.
+* standard deviation:                    One variable statistics.
+* standard error:                        Plotting means.
+* standard error of the mean:            One variable statistics.
+* step:                                  One variable statistics.
+* stop:                                  Appendix III.
+* strcmp <1>:                            Loops and ifs.
+* strcmp:                                Functions.
+* strcpy:                                Functions.
+* stretch:                               Transformations.
+* string <1>:                            Variables and operations.
+* string:                                Description and example.
+* string values:                         Datasets.
+* string, null:                          Variables and operations.
+* strings, comparing <1>:                Loops and ifs.
+* strings, comparing:                    Functions.
+* strings, copying:                      Functions.
+* structure, pict:                       Pict structure.
+* Student's t <1>:                       t distribution.
+* Student's t:                           One variable statistics.
+* subscripts:                            Output files.
+* sum:                                   One variable statistics.
+* superscripts:                          Output files.
+* swap:                                  Partitioning a dataset.
+* syntax <1>:                            Appendix III.
+* syntax:                                Description and example.
+* t:                                     One variable statistics.
+* t distribution:                        t distribution.
+* t-test:                                One variable statistics.
+* table:                                 Displaying a dataset.
+* tables:                                Invoking Dap.
+* tabulate (SBS proc):                   Displaying a dataset.
+* terminate:                             Appendix III.
+* text:                                  Text.
+* thickness, lines:                      Pict structure.
+* tick:                                  Axes.
+* ticks:                                 Axes.
+* title <1>:                             Axes.
+* title:                                 Output files.
+* title (SBS statement):                 Output files.
+* transform:                             Transformations.
+* translate:                             Transformations.
+* triangles:                             Pict structure.
+* trim:                                  Trimming extreme values.
+* troubleshooting:                       Appendix III.
+* Tukey:                                 Analysis of variance.
+* turn:                                  Transformations.
+* type:                                  Input and output.
+* type, picture:                         Pict structure.
+* uncertainty coefficient:               Categorical data analysis.
+* undeclared <1>:                        Variables and operations.
+* undeclared:                            Variables.
+* uniform distribution:                  Uniform distribution.
+* univariate (SBS proc):                 One variable statistics.
+* unknown variable <1>:                  Variables and operations.
+* unknown variable:                      Variables.
+* variable <1>:                          Variables and operations.
+* variable:                              Variables.
+* variable lists:                        Variables.
+* variable names:                        Variables.
+* variables as arguments:                Variables.
+* variance:                              One variable statistics.
+* viewer:                                Invoking Dap.
+* weight:                                One variable statistics.
+* width, lines:                          Pict structure.
+* Wilcoxon:                              Nonparametric analyses.
+* words:                                 Text.
+
+

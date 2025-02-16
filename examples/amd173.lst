@@ -1,0 +1,28 @@
+
+=================================
+Dap   1. Mon Jan 12 04:25:05 2004
+
+Test Ho:
+u11 - u21 - (u13 - u23) = 0
+u21 - u31 - (u22 - u32) = 0
+
+Testing Ho: treat*block
+Number of observations = 10
+H0 SS = 18.7778, df = 2, MS = 9.38889
+Error SS = 14.5, df = 3, MS = 4.83333
+F0 = 1.94253
+Prob[F > F0] = 0.28763
+
+=================================
+Dap   2. Mon Jan 12 04:25:05 2004
+
+Test Ho:
+u11 + u13 - (u21 + u23) = 0
+u21 + u22 - (u31 + u32) = 0
+
+Testing Ho: treat
+Number of observations = 10
+H0 SS = 2.77778, df = 2, MS = 1.38889
+Error SS = 14.5, df = 3, MS = 4.83333
+F0 = 0.287356
+Prob[F > F0] = 0.76882
