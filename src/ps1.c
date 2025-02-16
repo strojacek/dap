@@ -653,7 +653,7 @@ double pict_autoaxes(pict *p, char *xlab, char *ylab, char *axspec,
       exit(1);
     }
   /* the specs were set to NaNs, so if finite, they were present */
-  if (finite(specxmin))
+  if (isfinite(specxmin))
     minx = specxmin;
   else	/* we like to make minx leave a little extra room and be a nice decimal;
 	 * note that we are not dealing with xfunct and yfunct, because we have
@@ -664,7 +664,7 @@ double pict_autoaxes(pict *p, char *xlab, char *ylab, char *axspec,
       if (minx > 0.0)
 	minx = 0.0;
     }
-  if (finite(specxmax))
+  if (isfinite(specxmax))
     maxx = specxmax;
   else
     {
@@ -675,14 +675,14 @@ double pict_autoaxes(pict *p, char *xlab, char *ylab, char *axspec,
   minx -= AXISMARGIN * (maxx - minx);
   maxxt = maxx;
   maxx += AXISMARGIN * (maxx - minx);
-  if (finite(specymin))
+  if (isfinite(specymin))
     miny = specymin;
   else
     {
       if (miny > 0.0)
 	miny = 0.0;
     }
-  if (finite(specymax))
+  if (isfinite(specymax))
     maxy = specymax;
   else
     {
